@@ -7,7 +7,7 @@
 	<title><?php session_start();
 	if(isset($_SESSION['key']) && $_SESSION['type']=='admin')
 	{
-		 echo "Welcome Administrator";
+		 echo "Welcome Admin";
 	}
 	else {
 		echo "Online Classroom";
