@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php include('./scripts/globalVar.php');
             if (isset($_SESSION['key']) && $_SESSION['type'] == 'admin') {
-                echo "Welcome Admin";
+                echo "Welcome Administrator";
             } else if (isset($_SESSION['key']) && $_SESSION['type'] == 'faculty') {
                 echo "Welcome Faculty";
             } else if (isset($_SESSION['key']) && $_SESSION['type'] == 'student') {
