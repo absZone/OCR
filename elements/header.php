@@ -1,3 +1,6 @@
+<?php
+include('./scripts/globalVar.php');
+?>
 <div class="overlay"></div>
 <!-- Sidebar -->
 <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
@@ -7,50 +10,106 @@
                 ONLINE CLASSROOM
             </a>
         </li>
+        <?php
+        if (!(isset($_SESSION['key']))) {
+            ?>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
                 <li><a tabindex="-1" href="adminlogin.php">Admin Login</a></li>
                 <li><a tabindex="-1" href="facultylogin.php">Faculty Login</a></li>
                 <li><a tabindex="-1" href="studentlogin.php">Student Login</a></li>
+
+
             </ul>
         </li>
+        <?php
+
+    }
+    ?>
+
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Course <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-
+            <?php
+            if (isset($_SESSION['key']) && $_SESSION['type'] == 'admin') {
+                ?>  
                 <li><a tabindex="-1" href="./addcourse.php">Add Course</a></li>
+                <?php
+
+            }
+            ?>
 
                 <li><a tabindex="-1" href="#">View Courses</a></li>
             </ul>
         </li>
+        <?php
+        if (isset($_SESSION['key'])) {
+            ?>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exam <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-
+            <?php
+            if (isset($_SESSION['key']) && $_SESSION['type'] == 'faculty') {
+                ?>
                 <li><a tabindex="-1" href="questionpaper.php">Create Question Paper</a></li>
+                <?php 
+            }
 
 
-
+            if (isset($_SESSION['key']) && $_SESSION['type'] == 'student') { ?>
                 <li><a tabindex="-1" href="#">Give Exams</a></li>
+             <?php 
+        } ?>
             </ul>
         </li>
+            <?php 
+        } ?>
         <li class="dropdown">
+        <?php
+        if (isset($_SESSION['key'])) {
+            ?>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Videos<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
+            <?php
+            if (isset($_SESSION['key']) && $_SESSION['type'] == 'faculty') {
+                ?>
                 <li><a tabindex="-1" href="addvideo.php">Add Videos</a></li>
+                <?php 
+            }
+
+
+            if (isset($_SESSION['key']) && $_SESSION['type'] == 'student') { ?>
                 <li><a tabindex="-1" href="#">View Videos</a></li>
+                <?php 
+            } ?>
             </ul>
         </li>
-
+        <?php 
+    } ?>
         <li class="dropdown">
+        <?php
+        if (isset($_SESSION['key'])) {
+            ?>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Books<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
+            <?php
+            if (isset($_SESSION['key']) && $_SESSION['type'] == 'faculty') {
+                ?>
                 <li><a tabindex="-1" href="addbook.php">Add Books </a></li>
+                <?php 
+            }
+
+
+            if (isset($_SESSION['key']) && $_SESSION['type'] == 'student') { ?>
                 <li><a tabindex="-1" href="#">View Books </a></li>
+                <?php 
+            } ?>
             </ul>
         </li>
         <li>
+        <?php 
+    } ?>
             <a href="results.php">Results</a>
         </li>
         <li>
@@ -131,17 +190,17 @@
                             <li><a href="#">Games</a></li>
                             <li><a href="about.php">About Us</a></li>
                             <?php
-							if (isset($_SESSION['key'])) {
-									?>
+                            if ($isLogIn) {
+                                ?>
                             <li class="btn-cta"><a href="./scripts/logout.php"><span>Logout</span></a></li>
                             <?php 
-						} else {
-							?>
+                        } else {
+                            ?>
                             <li class="btn-cta"><a href="adminlogin.php"><span>Login</span></a></li>
                             <?php
 
-						}
-					?>
+                        }
+                        ?>
                         </ul>
                     </div>
                 </p>

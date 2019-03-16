@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +6,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php session_start();
-						if (isset($_SESSION['key']) && $_SESSION['type'] == 'admin') {
-								echo "Welcome Admin";
-							} else {
-							echo "Online Classroom";
-						}
-						?></title>
+    <title><?php include('./scripts/globalVar.php');
+            if (isset($_SESSION['key']) && $_SESSION['type'] == 'admin') {
+                echo "Welcome Admin";
+            } else if (isset($_SESSION['key']) && $_SESSION['type'] == 'faculty') {
+                echo "Welcome Faculty";
+            } else if (isset($_SESSION['key']) && $_SESSION['type'] == 'student') {
+                echo "Welcome Student";
+            } else {
+                echo "Online Classroom";
+            }
+            ?></title>
 
     <meta name="description" content="" />
     <meta name="keywords" content="" />
