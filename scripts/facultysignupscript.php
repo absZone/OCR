@@ -5,6 +5,13 @@ require('db.php');
 	$password = mysqli_real_escape_string($con, $_POST['password']);
 	$encryptPassword=md5($password);
 	$firstName = mysqli_real_escape_string($con, $_POST['firstName']);
+	if (!preg_match("/^[a-zA-Z0-9_]*$/",$firstName)) {
+		$ErrorUname = "Space and special characters not allowed but you can use underscore(_)."; 
+	  }
+	  else{
+		  $fusername=$firstName;
+	  }
+	}
 	$lastName = mysqli_real_escape_string($con, $_POST['lastName']);
 	$gender = mysqli_real_escape_string($con, $_POST['gender']);
 	$age = mysqli_real_escape_string($con, $_POST['age']);
@@ -13,7 +20,7 @@ require('db.php');
 	$adress = mysqli_real_escape_string($con, $_POST['adress']);
 	$phoneNo = mysqli_real_escape_string($con, $_POST['phoneNo']);
 	$sqlInsert = "INSERT INTO faculty(facultyId,loginId,password,firstName,lastName,gender,age,course,experienceYear,adress,phoneNo) 
-	VALUES(UUID(),'$loginId','$encryptPassword','$firstName','$lastName','$gender','$age','$course','$experienceYears','$adress','$phoneNo')";
+	VALUES(UUID(),'$loginId','$encryptPassword','$fusername','$lastName','$gender','$age','$course','$experienceYears','$adress','$phoneNo')";
 	if(mysqli_query($con,$sqlInsert))
 	{
             $msg = 'Congratulation you have successfully registered.';
