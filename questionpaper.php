@@ -105,7 +105,7 @@
 </div>
 <hr/>
     <input type="text" placeholder="Question " name="question" class="qs"  required>
-		
+	
 		<div class="onerow">
 		<input type="radio"  name="radio" value="1">
 		</div>

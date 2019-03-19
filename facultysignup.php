@@ -92,7 +92,7 @@
 
    
     <input type="text" placeholder="First Name" name="firstName" required>
-
+		<span class = "error"><?php $ErrorUname; echo $ErrorUname;?></span>
     
     <input type="text" placeholder="Last Name" name="lastName" required>
     <input type="radio" name="gender" value="male" >Male 

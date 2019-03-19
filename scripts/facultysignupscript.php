@@ -4,14 +4,18 @@ require('db.php');
    $loginId = mysqli_real_escape_string($con, $_POST['loginId']);
 	$password = mysqli_real_escape_string($con, $_POST['password']);
 	$encryptPassword=md5($password);
-	$firstName = mysqli_real_escape_string($con, $_POST['firstName']);
-	if (!preg_match("/^[a-zA-Z0-9_]*$/",$firstName)) {
+	$first=$_POST['firstName'];
+	
+	
+		if (!preg_match("/^[a-zA-Z0-9_]*$/",$first)) {
 		$ErrorUname = "Space and special characters not allowed but you can use underscore(_)."; 
-	  }
-	  else{
-		  $fusername=$firstName;
-	  }
+	  
 	}
+	  else{
+		  $fusername= mysqli_real_escape_string($con,$firstName );
+		}
+		
+	
 	$lastName = mysqli_real_escape_string($con, $_POST['lastName']);
 	$gender = mysqli_real_escape_string($con, $_POST['gender']);
 	$age = mysqli_real_escape_string($con, $_POST['age']);
