@@ -88,23 +88,14 @@
 	<hr>
   <div class="main-container">
 
-	<input type="text" placeholder="Login Name" name="loginId" required>
-	<input type="text" placeholder="Password" name="password" required>
-
-   
-    <input type="text" placeholder="First Name" name="firstName" required>
-
-    
-    <input type="text" placeholder="Last Name" name="lastName" required>
-    
-
-    
-        
-    <input type="text" placeholder="Age" name="age" required>
-
-    <!-- <input type="text" placeholder="Course" name="courseName" required> -->
-						<select name="courseTypeId" id="inputCourseType" class="form-control" >
-						<?php
+	<input type="text" placeholder="Login Name" name="loginId"  id="loginId"  minlength="3" maxlength="20" required>
+	<input type="text" placeholder="Password" name="password" id="password" minlength="8" maxlength="20" required>
+	<input type="text" placeholder="First Name" name="firstName" id="firstName" minlength="3" maxlength="20" required>
+	<input type="text" placeholder="Last Name" name="lastName"  id="lastName" minlength="3" maxlength="20" required>
+	<input type="text" placeholder="Age" name="age"  id="age" minlength="3" maxlength="20" required>
+	<!-- <input type="text" placeholder="Course" name="courseName" required> -->
+	<select name="courseTypeId" id="courseTypeId" class="form-control" >
+				<?php
 					$query="SELECT * FROM course_type";
 					if($result2=mysqli_query($con,$query))
 					{
@@ -116,32 +107,100 @@
 				
 				 	while($row=mysqli_fetch_array($result2)) 
 					{
-			 	 ?>
-
-						
-				 			<option value="<?php echo $row["courseTypeId"]; ?>"><?php echo $row["courseType"]; ?></option>
-					 <?php 
+			 	?>
+	<option value="<?php echo $row["courseTypeId"]; ?>"><?php echo $row["courseType"]; ?></option>
+				<?php 
 				 }
 				 ?> 
-						</select>
-        
-    <input type="radio" name="gender" value="male" >Male 
-  <input type="radio" name="gender" value="female"> Female
-
-    <input type="text" placeholder="Address" name="address" required>
-        
-    <input type="text" placeholder="Phone No" name="phoneNo" required>
-        
-        
-        
-		<button type="submit"class="main-button">Signup</button>
-		<br/>
-		
-    
-  </div>
-
+	</select>
+  <input type="radio" name="gender" id="gender"  value="male" >Male 
+  <input type="radio" name="gender"  id="gender" value="female"> Female
+  <input type="text" placeholder="Address" name="address" id="address" minlength="3" maxlength="20" required>
+  <input type="text" placeholder="Phone No" name="phoneNo" id="phoneNo" minlength="3" maxlength="20" required>
+  <button type="submit"class="main-button" disabled>Signup</button>
+<br/>
+</div></form>
+<script>
+const loginId = document.getElementById('loginId');
+const password = document.getElementById('password');
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const age = document.getElementById('age');
+const courseTypeId = document.getElementById('courseTypeId');
+const gender = document.getElementById('gender');
+const address = document.getElementById('address');
+const phoneNo = document.getElementById('phoneNo');
+const submit = document.getElementById('submit');
   
-</form>
+loginId.addEventListener('onclick', function (event) {
+  isValidId = loginId.checkValidity();
+  
+  if ( isValidId ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+		
+		}
+		
+});
+password.addEventListener('onclick', function (event) {
+  isValidpass = password.checkValidity();
+  
+  if ( isValidpass ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+});  
+firstName.addEventListener('onclick', function (event) {
+  isValidfir = firstName.checkValidity();
+  
+  if ( isValidfir ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+lastName.addEventListener('onclick', function (event) {
+  isValidlas = lastName.checkValidity();
+  
+  if ( isValidlas ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+
+age.addEventListener('onclick', function (event) {
+  isValidage = age.checkValidity();
+  
+  if ( isValidage ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+address.addEventListener('onclick', function (event) {
+  isValidadre = address.checkValidity();
+  
+  if ( isValidadre ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+phoneNo.addEventListener('keyup', function (event) {
+  isValidphne = phoneNo.checkValidity();
+  
+  if ( isValidphne ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+
+</script>
+
 </div>
 
 

@@ -87,32 +87,32 @@
 	<h2 class="form-heading"> Faculty Signup </h2>
 	<hr>
   <div class="main-container">
-	<input type="text" placeholder="Login Name" name="loginId" required>
-	<input type="text" placeholder="Password" name="password" required>
+	<input type="text" placeholder="Login Name" id="loginId" name="loginId" minlength="3" maxlength="20" required>
+	<input type="text" placeholder="Password" id="password" name="password" minlength="8" maxlength="20" required>
 
    
-    <input type="text" placeholder="First Name" name="firstName" required>
-		<span class = "error"><?php $ErrorUname; echo $ErrorUname;?></span>
+    <input type="text" placeholder="First Name" id="firstName" name="firstName" minlength="3" maxlength="20" required>
+		
     
-    <input type="text" placeholder="Last Name" name="lastName" required>
-    <input type="radio" name="gender" value="male" >Male 
-  <input type="radio" name="gender" value="female"> Female
+    <input type="text" placeholder="Last Name" id="lastName" name="lastName" minlength="3" maxlength="20" required>
+    <input type="radio" id="gender" name="gender" value="male" >Male 
+  <input type="radio" id="gender" name="gender" value="female"> Female
 
     
         
-    <input type="text" placeholder="Age" name="age" required>
+    <input type="text" placeholder="Age" id="age" name="age" required>
 
-    <input type="text" placeholder="Course" name="course" required>
+    <input type="text" placeholder="Course" id="course" name="course" required>
         
-    <input type="text" placeholder="Experience Years" name="experienceYears" required>
+    <input type="text" placeholder="Experience Years" id="experienceYears" name="experienceYears" minlength="3" maxlength="20" required>
 
-    <input type="text" placeholder="Address" name="adress" required>
+    <input type="text" placeholder="Address" id="adress" name="adress" minlength="3" maxlength="20" required>
         
-    <input type="text" placeholder="Phone No" name="phoneNo" required>
+    <input type="text" placeholder="Phone No" id="phoneNo" name="phoneNo" required>
         
         
         
-		<button type="submit"class="main-button">Signup</button>
+		<button id="submit"class="main-button" disabled>Signup</button>
 		<br/>
 		
     
@@ -120,6 +120,105 @@
 
   
 </form>
+<script>
+const loginId = document.getElementById('loginId');
+const password = document.getElementById('password');
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const gender = document.getElementById('gender');
+const age = document.getElementById('age');
+const course = document.getElementById('course');
+const experienceYears = document.getElementById('experienceYears');
+const adress = document.getElementById('adress');
+const phoneNo = document.getElementById('phoneNo');
+const submit = document.getElementById('submit');
+  
+loginId.addEventListener('onclick', function (event) {
+  isValidId = loginId.checkValidity();
+  
+  if ( isValidId ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+		
+		}
+		
+});
+password.addEventListener('onclick', function (event) {
+  isValidpass = password.checkValidity();
+  
+  if ( isValidpass ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+});  
+firstName.addEventListener('onclick', function (event) {
+  isValidfir = firstName.checkValidity();
+  
+  if ( isValidfir ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+lastName.addEventListener('onclick', function (event) {
+  isValidlas = lastName.checkValidity();
+  
+  if ( isValidlas ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+
+age.addEventListener('onclick', function (event) {
+  isValidage = age.checkValidity();
+  
+  if ( isValidage ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+course.addEventListener('onclick', function (event) {
+  isValidcou = course.checkValidity();
+  
+  if ( isValidcou ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+experienceYears.addEventListener('onclick', function (event) {
+  isValidexp = experienceYears.checkValidity();
+  
+  if ( isValidexp ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+adress.addEventListener('onclick', function (event) {
+  isValidadre = adress.checkValidity();
+  
+  if ( isValidadre ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+phoneNo.addEventListener('keyup', function (event) {
+  isValidphne = phoneNo.checkValidity();
+  
+  if ( isValidphne ) {
+    submit.disabled = false;
+  } else {
+    submit.disabled = true;
+  }
+}); 
+
+</script>
 </div>
 
 
