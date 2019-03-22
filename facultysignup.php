@@ -108,7 +108,7 @@
 
     <input type="text" placeholder="Address" id="adress" name="adress" minlength="3" maxlength="20" required>
         
-    <input type="text" placeholder="Phone No" id="phoneNo" name="phoneNo" required>
+    <input type="text" placeholder="Phone No" id="phoneNo" name="phoneNo" min="1" max="10" required>
         
         
         
@@ -208,7 +208,7 @@ adress.addEventListener('onclick', function (event) {
     submit.disabled = true;
   }
 }); 
-phoneNo.addEventListener('keyup', function (event) {
+phoneNo.addEventListener('onclick', function (event) {
   isValidphne = phoneNo.checkValidity();
   
   if ( isValidphne ) {
