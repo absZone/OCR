@@ -34,7 +34,7 @@
 				<div class="row row-pb-md">
 		
 					<div class="col-md-3 colorlib-widget">
-						<h4>About Eskwela</h4>
+						<h4>About Online Classroom</h4>
 						<p>This website is designed for Educational Institute. It handles all the operations, and
 generate reports as soon as the test is finish that includes, names, marks, time spent to solve
 the exam. It allows students to see or display his answers after the exam is finish.<p>

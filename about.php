@@ -113,9 +113,7 @@ productive ways.</p>
 							<p>Online classroom is a vision is to empower, enable and connect
 students/participants and teachers/presenters around the departmental network using virtual
 classroom. It provides students with a simulating, positive and enjoyable environment along
-with the opportunity to develop skills that are essential in the 21 st century. Online quiz system
-,lectures/presentations recordings chatting within the network to ask questions and to
-collaborate, file sharing, directory sharing, audio/video input/output device sharing etc.</p>
+with the opportunity to develop skills that are essential in the 21 st century.</p>
 						</div>
 					</div>
 				</div>
@@ -154,7 +152,7 @@ resources.</p>
 						<div class="trainers-entry">
 							<div class="trainer-img" style="background-image: url(images/person1.jpg)"></div>
 							<div class="desc">
-								<h3>Olivia Young</h3>
+								<h3>Rinkle Solanki</h3>
 								<span>Teacher</span>
 							</div>
 							
@@ -166,8 +164,8 @@ resources.</p>
 						<div class="trainers-entry">
 							<div class="trainer-img" style="background-image: url(images/person2.jpg)"></div>
 							<div class="desc">
-								<h3>Daniel Anderson</h3>
-								<span>Professor</span>
+								<h3>Roshni </h3>
+								<span>Teacher</span>
 							</div>
 							
 							<p class="social"><a href="#">Twitter</a> <a href="#">Facebook</a> <a href="#">Email</a></p>
@@ -178,7 +176,7 @@ resources.</p>
 						<div class="trainers-entry">
 							<div class="trainer-img" style="background-image: url(images/person3.jpg)"></div>
 							<div class="desc">
-								<h3>David Brook</h3>
+								<h3>Shahista Agwan</h3>
 								<span>Teacher</span>
 							</div>
 							
