@@ -140,7 +140,8 @@ loginId.addEventListener('onclick', function (event) {
     submit.disabled = false;
   } else {
     submit.disabled = true;
-		
+		document.getElementById("loginId").innerHTML = "Requried Field should contain atleast 3 characters!"; // 'firstname' is div tag name
+		document.getElementById("loginId").focus();
 		}
 		
 });
