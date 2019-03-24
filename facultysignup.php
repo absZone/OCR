@@ -1,4 +1,6 @@
-<?php require('scripts/db.php'); ?>
+<?php require('scripts/db.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +88,17 @@
   
 	<h2 class="form-heading"> Faculty Signup </h2>
 	<hr>
+	<?php 
+		if(isset($_SESSION['flag'])) {
+			?>
+			<div class="alert alert-info">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<strong>Success : </strong> Inserted Successfully
+		</div>
+		<?php
+		}
+		unset($_SESSION['flag']);
+		?>
   <div class="main-container">
 	<input type="text" placeholder="Login Name" id="loginId" name="loginId" minlength="3" maxlength="20" required>
 	<input type="text" placeholder="Password" id="password" name="password" minlength="8" maxlength="20" required>
@@ -112,8 +125,10 @@
         
         
         
-		<button id="submit"class="main-button" disabled>Signup</button>
+		<button id="submit"class="main-button">Signup</button>
 		<br/>
+		
+		
 		
     
   </div>

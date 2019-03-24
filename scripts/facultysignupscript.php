@@ -1,6 +1,7 @@
 <?php
-
-require('db.php');
+session_start();
+if(isset($_POST['loginId'])) {
+	require('db.php');
    $loginId = mysqli_real_escape_string($con, $_POST['loginId']);
 	$password = mysqli_real_escape_string($con, $_POST['password']);
 	$encryptPassword=md5($password);
@@ -16,16 +17,13 @@ require('db.php');
 	VALUES(UUID(),'$loginId','$encryptPassword','$firstName','$lastName','$gender','$age','$course','$experienceYears','$adress','$phoneNo')";
 	if(mysqli_query($con,$sqlInsert))
 	{
-            $msg = 'Congratulation you have successfully registered.';
+		$_SESSION['flag'] = true;
 
 	}
 	else
 	{
-            $msg = 'Error while registering you...';
-	
-       
-        
+		
 	}
-
-echo $msg;
+}
+header('Location:../facultysignup.php');
 ?>
