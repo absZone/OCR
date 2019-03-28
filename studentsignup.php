@@ -117,7 +117,7 @@
   <input type="radio" name="gender"  id="gender" value="female"> Female
   <input type="text" placeholder="Address" name="address" id="address" minlength="3" maxlength="20" required>
   <input type="text" placeholder="Phone No" name="phoneNo" id="phoneNo" minlength="3" maxlength="20" required>
-  <button type="submit"class="main-button" disabled>Signup</button>
+  <button type="submit"class="main-button" >Signup</button>
 <br/>
 </div></form>
 <script>
@@ -189,7 +189,7 @@ address.addEventListener('onclick', function (event) {
     submit.disabled = true;
   }
 }); 
-phoneNo.addEventListener('keyup', function (event) {
+phoneNo.addEventListener('onclick', function (event) {
   isValidphne = phoneNo.checkValidity();
   
   if ( isValidphne ) {

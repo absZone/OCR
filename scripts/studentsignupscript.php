@@ -23,8 +23,9 @@ require('db.php');
 			//UUID stored in this variable
 		}
 	}
-	if(mysqli_query($con, "INSERT INTO student(studentId,courseTypeId,loginId,password,firstName,lastName,age,gender,address,phoneNo)
-	 VALUES('$studentId','$courseTypeId','$loginId','$encryptPassword','$firstName','$lastName','$age','$gender','$address','$phoneNo')"))
+	$sqlInsert="INSERT INTO student(studentId,courseTypeId,loginId,password,firstName,lastName,age,gender,address,phoneNo)
+	 VALUES('$studentId','$courseTypeId','$loginId','$encryptPassword','$firstName','$lastName','$age','$gender','$address','$phoneNo')";
+	if(mysqli_query($con,$sqlInsert))
 {
             $msg = 'Student Added';
   
