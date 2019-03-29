@@ -1,0 +1,31 @@
+<script type="text/javascript">
+            $('#submit').click(function() {
+                        // Now send the login data to the server
+                        var submitted_courseName = $("#courseName").val(),
+                            submitted_courseType = $("#courseType").val();
+
+                        // Do login via ajax
+                        $.ajax({
+                            url: "../scripts/addcoursescript.php", // Your php script to wait for login connections and set login sessions
+                            type: "POST",
+                            // You can access the user and pass with $_POST['username'] and $_POST['password']
+                            data: {
+                                CourseName: submitted_courseName,
+                                CourseType: submitted_courseType
+                            },
+
+                            success: function(response_text) // response_text - is what you output based on user login information, lets suggest you output numbers i.e. 1 means logged in, 2 password incorred, 3 any other reason...
+                            {
+                                if (response_text) {
+                                    alert(response_text) // update the percentage to 100%
+
+                                    // We will wait (not necessary) till the animation is finished and then redirect to dashboard
+                                    setTimeout(function() {
+                                        // window.location.href = ''; // after this, its done!
+                                    }, 1000);
+                                }
+                            }
+                        });
+
+                    }
+        </script>
