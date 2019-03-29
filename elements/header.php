@@ -186,7 +186,7 @@ include('./scripts/globalVar.php');
                     <div>
                         <ul>
                             <li class="active"><a href="index.php">Home</a></li>
-                            <li><a href="#">Career</a></li>
+                            <li><a href="carrer.php">Career</a></li>
                             <li><a href="#">Games</a></li>
                             <li><a href="about.php">About Us</a></li>
                             <?php

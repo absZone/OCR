@@ -96,7 +96,7 @@
         
 		<button type="submit"class="main-button">Login</button>
 		<br/>
-		<a class="main-create form" href="facultysignup.php">Create an Faculty account</a>
+		<a class="main-create form" href="studentsignup.php">Create an student account</a>
     
   </div>
 

@@ -93,8 +93,9 @@
 
     <input type="password" placeholder="Admin password" name="password" required>
  
-		<button type="submit" class="main-button">Login</button>
-		<br/>   
+		<button type="submit" class="main-button">Login</button><br/>
+		<a class="main-create form" href="facultysignup.php">Create an Faculty account</a>
+		   
   </div>
 
   
