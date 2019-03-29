@@ -70,7 +70,7 @@
     <div id="wrapper">
         <div>
             <?php include('elements/header.php');
-						?>
+            ?>
         </div>
 
         <div id="page-content-wrapper">
@@ -94,21 +94,21 @@
                                     <div class="col-md-12">
 
                                         <div class="form-group">
-                                            <label for="input" class="col-sm-3 control-label">Course Name:</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" name="courseName" id="input" class="form-control" value="" required="required">
-                                            </div>
+                                            <label for="input" class="col-sm-3 control-label"> Select Course:</label>
+                                            <select name="courseId" id="inputCourse" class="form-control">
+                                                <?php
+                                                $query = "SELECT * FROM course";
+                                                $result2 = mysqli_query($con, $query);
+                                                while ($row = mysqli_fetch_array($result2)) {
+                                                    ?>
+                                                <option value="<?php echo $row["courseId"]; ?>"><?php echo $row["courseName"]; ?></option>
+                                                <?php 
+                                            }
+                                            ?>
+                                            </select>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="inputCourseType" class="col-sm-3 control-label">CourseType:</label>
-                                            <div class="col-sm-8">
-                                                <select name="CourseType" id="inputCourseType" class="form-control" required="required">
-                                                    <option value="1234">Semester1</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
+                                        
 
                                         <div class="form-group">
                                             <label for="inputCourseType" class="col-sm-3 control-label">Upload Video:</label>

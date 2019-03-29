@@ -1,4 +1,4 @@
-+<?php require('scripts/db.php'); ?>
+<?php require('scripts/db.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
