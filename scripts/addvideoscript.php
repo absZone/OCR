@@ -18,4 +18,4 @@ if (isset($_POST['submit'])) {
             echo "" . $videoName . "has been submitted";
         }
     }
- 
+ ?>
