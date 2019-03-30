@@ -188,28 +188,28 @@ require('../scripts/db.php');
                     },
                     password: {
                         required: true
-                    }
+                    },
                     firstName: {
                         required: true
-                    }
+                    },
                     lastName: {
                         required: true
-                    }
+                    },
                     gender: {
                         required: true
-                    }
+                    },
                     age: {
                         required: true
-                    }
+                    },
                     course: {
                         required: true
-                    }
+                    },
                     experienceYears: {
                         required: true
-                    }
+                    },
                     adress: {
                         required: true
-                    }
+                    },
                     phoneNo: {
                         required: true
                     }
@@ -223,28 +223,28 @@ require('../scripts/db.php');
                     },
                     password: {
                         required: 'Enter Password'
-                    }
+                    },
                     firstName: {
                         required: 'Enter Your First Name'
-                    }
+                    },
                     lastName: {
                         required: 'Enter Your Last Name'
-                    }
+                    },
                     gender: {
                         required: 'Select Your Gender'
-                    }
+                    },
                     age: {
                         required: 'Enter Your Age'
-                    }
+                    },
                     course: {
                         required: 'Enter Course'
-                    }
+                    },
                     experienceYears: {
                         required: 'Enter Experience Years'
-                    }
+                    },
                     adress: {
                         required: 'Enter Your Address'
-                    }
+                    },
                     phoneNo: {
                         required: 'Enter Your Phone No'
                     }
