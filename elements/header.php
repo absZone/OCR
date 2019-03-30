@@ -68,7 +68,7 @@
 					</a>
 					<ul>
 						<li>
-							<a href="layout-api.html">
+							<a href="../pages/addFaculty.php">
 								<span class="title">Add Faculty</span>
 							</a>
 						</li>
@@ -86,7 +86,7 @@
 					</a>
 					<ul>
 						<li>
-							<a href="layout-api.html">
+							<a href="addStudent.php">
 								<span class="title">Add Students</span>
 							</a>
 						</li>
@@ -104,7 +104,7 @@
 					</a>
 					<ul>
 						<li>
-							<a href="layout-api.html">
+							<a href="questionPaper.php">
 								<span class="title">Add Question & Answers</span>
 							</a>
 						</li>
