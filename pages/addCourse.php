@@ -140,7 +140,9 @@ require('../scripts/db.php');
                     //element id courseName
                     courseName: {
                         //validation property
-                        required: true
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
                     },
                     courseType: {
                         required: true
@@ -151,7 +153,9 @@ require('../scripts/db.php');
                     //element id courseName
                     courseName: {
                         //validation property and message value
-                        required: 'Required Field'
+                        required: 'Required Field',
+                        minlength: 'Required atleast 3 characters',
+                        maxlength: 'Required atmost 20 characters'
                     },
                     courseType: {
                         required: 'Select Type of Course...'
@@ -174,7 +178,7 @@ require('../scripts/db.php');
                         type: "POST",
                         // You can access the user and pass with $_POST['username'] and $_POST['password']
                         data: {
-                            CourseName: submitted_courseName,
+                            CourseName: submitted_courseName,//$_POST['CourseName']
                             CourseType: submitted_courseType
                         },
 

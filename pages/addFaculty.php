@@ -184,34 +184,51 @@ require('../scripts/db.php');
                     
                     loginId: {
                         
-                        required: true
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
                     },
                     password: {
-                        required: true
+                        required: true,
+                        minlength: 8,
+                        maxlength: 20
                     },
                     firstName: {
-                        required: true
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
                     },
                     lastName: {
-                        required: true
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
                     },
                     gender: {
                         required: true
                     },
                     age: {
-                        required: true
+                        required: true,
+                        number: true,
+                        min: 25,
+                        max: 60
                     },
                     course: {
                         required: true
                     },
                     experienceYears: {
-                        required: true
+                        required: true,
+                        number: true,    
                     },
                     adress: {
-                        required: true
+                        required: true,
+                        minlength: 3,
+                        maxlength: 40
                     },
                     phoneNo: {
-                        required: true
+                        required: true,
+                        minlength: 10,
+                        maxlength: 10,
+                        number: true
                     }
                 },
                 //display error messages
@@ -219,34 +236,51 @@ require('../scripts/db.php');
                     
                     loginId: {
                         
-                        required: 'Required Field'
+                        required: 'Required Field',
+                        minlength: 'Required atleast 3 characters',
+                        maxlength: 'Required atmost 20 characters'
                     },
                     password: {
-                        required: 'Enter Password'
+                        required: 'Enter Password',
+                        minlength: 'Required atleast 8 characters',
+                        maxlength: 'Required atmost 20 characters'
                     },
                     firstName: {
-                        required: 'Enter Your First Name'
+                        required: 'Enter Your First Name',
+                        minlength: 'Required atleast 3 characters',
+                        maxlength: 'Required atmost 20 characters'
                     },
                     lastName: {
-                        required: 'Enter Your Last Name'
+                        required: 'Enter Your Last Name',
+                        minlength: 'Required atleast 3 characters',
+                        maxlength: 'Required atmost 20 characters'
                     },
                     gender: {
                         required: 'Select Your Gender'
                     },
                     age: {
-                        required: 'Enter Your Age'
+                        required: 'Enter Your Age',
+                        number: 'Invalid Entry',
+                        min: 'Age should be more than 25',
+                        max: 'Age should be less than 60'
                     },
                     course: {
                         required: 'Enter Course'
                     },
                     experienceYears: {
-                        required: 'Enter Experience Years'
+                        required: 'Enter Experience Years',
+                        number: 'Invalid Entry'
                     },
                     adress: {
-                        required: 'Enter Your Address'
+                        required: 'Enter Your Address',
+                        minlength: 'Required atleast 3 characters',
+                        maxlength: 'Required atmost 40 characters'
                     },
                     phoneNo: {
-                        required: 'Enter Your Phone No'
+                        required: 'Enter Your Phone No',
+                        minlength: 'Required 10 numbers',
+                        maxlength: 'Required 10 numbers',
+                        number: 'Invalid Entry'
                     }
                 },
                 //Call Element Validation on focus out from element

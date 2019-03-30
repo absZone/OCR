@@ -195,25 +195,99 @@ require('../scripts/db.php');
             $("#form1").validate({
                 //setup rules for validation
                 rules: {
-                    //element id courseName
-                    courseName: {
-                        //validation property
+                    
+                    loginId: {
+                        
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8,
+                        maxlength: 20
+                    },
+                    firstName: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
+                    },
+                    lastName: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 20
+                    },
+                    age: {
+                        required: true,
+                        number: true,
+                        min: 25,
+                        max: 60
+                    },
+                    courseTypeId: {
                         required: true
                     },
-                    courseType: {
+                    gender: {
                         required: true
+                    },
+                    adress: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 40
+                    },
+                    phoneNo: {
+                        required: true,
+                        minlength: 10,
+                        maxlength: 10,
+                        number: true
                     }
                 },
                 //display error messages
                 messages: {
                     //element id courseName
-                    courseName: {
-                        //validation property and message value
-                        required: 'Required Field'
+                    loginId: {
+                        
+                        required: 'Required Field',
+                        minlength: 'Required atleast 3 characters',
+                        maxlength: 'Required atmost 20 characters'
                     },
-                    courseType: {
-                        required: 'Select Type of Course...'
+                    password: {
+                        required: 'Enter Password',
+                        minlength: 'Required atleast 8 characters',
+                        maxlength: 'Required atmost 20 characters'
                     },
+                    firstName: {
+                        required: 'Enter Your First Name',
+                        minlength: 'Required atleast 3 characters',
+                        maxlength: 'Required atmost 20 characters'
+                    },
+                    lastName: {
+                        required: 'Enter Your Last Name',
+                        minlength: 'Required atleast 3 characters',
+                        maxlength: 'Required atmost 20 characters'
+                    },
+                    age: {
+                        required: 'Enter Your Age',
+                        number: 'Invalid Entry',
+                        min: 'Age should be more than 25',
+                        max: 'Age should be less than 60'
+                    },
+                    course: {
+                        required: 'Enter Course'
+                    },
+                    gender: {
+                        required: 'Select Your Gender'
+                    },
+                    adress: {
+                        required: 'Enter Your Address',
+                        minlength: 'Required atleast 3 characters',
+                        maxlength: 'Required atmost 40 characters'
+                    },
+                    phoneNo: {
+                        required: 'Enter Your Phone No',
+                        minlength: 'Required 10 numbers',
+                        maxlength: 'Required 10 numbers',
+                        number: 'Invalid Entry'
+                    }
                 },
                 //Call Element Validation on focus out from element
                 onfocusout: function(element) {
