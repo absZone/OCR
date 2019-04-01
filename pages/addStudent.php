@@ -271,7 +271,7 @@ require('../scripts/db.php');
                         min: 'Age should be more than 25',
                         max: 'Age should be less than 60'
                     },
-                    course: {
+                    courseTypeId: {
                         required: 'Enter Course'
                     },
                     gender: {
@@ -297,17 +297,32 @@ require('../scripts/db.php');
                 submitHandler: function(form) {
                     show_loading_bar(20);
 
-                    var submitted_courseName = $("#courseName").val(),
-                        submitted_courseType = $("#courseType").val();
+                    var submitted_loginId = $("#loginId").val(),
+                        submitted_password = $("#password").val(),
+                        submitted_firstName = $("#firstName").val(),
+                        submitted_lastName = $("#lastName").val(),
+                        submitted_age = $("#age").val(),
+                        submitted_courseTypeId = $("#courseTypeId").val(),
+                        submitted_gender = $("#gender").val(),
+                        submitted_adress = $("#adress").val(),
+                        submitted_phoneNo = $("#phoneNo").val();
 
 
                     $.ajax({
-                        url: "../scripts/addcoursescript.php", // Your php script to wait for login connections and set login sessions
+                        url: "../scripts/addstudentscript.php", // Your php script to wait for login connections and set login sessions
                         type: "POST",
                         // You can access the user and pass with $_POST['username'] and $_POST['password']
                         data: {
-                            CourseName: submitted_courseName,
-                            CourseType: submitted_courseType
+                            loginId: submitted_loginId,
+                            password: submitted_password ,
+                            firstName: submitted_firstName,
+                            lastName: submitted_lastName,
+                            age: submitted_age,
+                            courseTypeId: submitted_courseTypeId,
+                            gender: submitted_gender,
+                            experienceYears: submitted_experienceYears,
+                            adress: submitted_adress,
+                            phoneNo: submitted_phoneNo
                         },
 
                         success: function(response_text) // response_text - is what you output based on user login information, lets suggest you output numbers i.e. 1 means logged in, 2 password incorred, 3 any other reason...
@@ -317,7 +332,7 @@ require('../scripts/db.php');
                                 show_loading_bar({
                                     pct: 100,
                                     finish: function(pct) {
-                                        toastr.info("Course Inserted Successfully");
+                                        toastr.info("Student Added Successfully");
                                         hide_loading_bar();
                                     }
                                 });
@@ -325,7 +340,7 @@ require('../scripts/db.php');
                                 show_loading_bar({
                                     pct: 100,
                                     finish: function(pct) {
-                                        toastr.info("Course Updated Successfully");
+                                        toastr.info("Student Added Successfully");
                                         hide_loading_bar();
                                     }
                                 });
