@@ -142,7 +142,7 @@ require('../scripts/db.php');
                                 <div class="form-group">
                                     <label class="control-label">Address</label>
 
-                                    <input type="text" id="adress" name="adress" class="form-control" placeholder="Address" />
+                                    <input type="text" id="address" name="address" class="form-control" placeholder="Address" />
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Phone Number</label>
@@ -229,7 +229,7 @@ require('../scripts/db.php');
                     gender: {
                         required: true
                     },
-                    adress: {
+                    address: {
                         required: true,
                         minlength: 3,
                         maxlength: 40
@@ -277,7 +277,7 @@ require('../scripts/db.php');
                     gender: {
                         required: 'Select Your Gender'
                     },
-                    adress: {
+                    address: {
                         required: 'Enter Your Address',
                         minlength: 'Required atleast 3 characters',
                         maxlength: 'Required atmost 40 characters'
@@ -304,7 +304,7 @@ require('../scripts/db.php');
                         submitted_age = $("#age").val(),
                         submitted_courseTypeId = $("#courseTypeId").val(),
                         submitted_gender = $("#gender").val(),
-                        submitted_adress = $("#adress").val(),
+                        submitted_address = $("#address").val(),
                         submitted_phoneNo = $("#phoneNo").val();
 
 
@@ -320,8 +320,7 @@ require('../scripts/db.php');
                             age: submitted_age,
                             courseTypeId: submitted_courseTypeId,
                             gender: submitted_gender,
-                            experienceYears: submitted_experienceYears,
-                            adress: submitted_adress,
+                            address: submitted_address,
                             phoneNo: submitted_phoneNo
                         },
 
@@ -353,7 +352,7 @@ require('../scripts/db.php');
                                     }
                                 });
                             }
-                            document.getElementById("form1").reset();
+                            document.getElementById("form3").reset();
                         }
                     });
                     return false;
