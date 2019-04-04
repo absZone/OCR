@@ -68,7 +68,7 @@ require('../scripts/db.php');
 
                         <!-- panel body -->
                         <div class="panel-body">
-                            <form role="form" id="form6" method="post" class="validate">
+                            <form role="form" id="form7" method="post" class="validate">
 
                                 <div class="form-group">
                                     <label class="control-label">Student User ID</label>
@@ -127,27 +127,31 @@ require('../scripts/db.php');
                 //setup rules for validation
                 rules: {
                     //element id courseName
-                    courseName: {
-                        //validation property
+                    loginId: {
+                        
                         required: true,
                         minlength: 3,
                         maxlength: 20
                     },
-                    courseType: {
-                        required: true
+                    password: {
+                        required: true,
+                        minlength: 4,
+                        maxlength: 20
                     }
                 },
                 //display error messages
                 messages: {
                     //element id courseName
-                    courseName: {
-                        //validation property and message value
+                    loginId: {
+                        
                         required: 'Required Field',
                         minlength: 'Required atleast 3 characters',
                         maxlength: 'Required atmost 20 characters'
                     },
-                    courseType: {
-                        required: 'Select Type of Course...'
+                    password: {
+                        required: 'Enter Password',
+                        minlength: 'Required atleast 4 characters',
+                        maxlength: 'Required atmost 20 characters'
                     },
                 },
                 //Call Element Validation on focus out from element
@@ -158,8 +162,8 @@ require('../scripts/db.php');
                 submitHandler: function(form) {
                     show_loading_bar(20);
                     
-                    var submitted_courseName = $("#courseName").val(),
-                        submitted_courseType = $("#courseType").val();
+                    var submitted_loginId = $("#loginId").val(),
+                        submitted_password = $("#password").val();
 
 
                     $.ajax({
@@ -167,8 +171,8 @@ require('../scripts/db.php');
                         type: "POST",
                         // You can access the user and pass with $_POST['username'] and $_POST['password']
                         data: {
-                            CourseName: submitted_courseName,//$_POST['CourseName']
-                            CourseType: submitted_courseType
+                            loginId: submitted_loginId,//$_POST['CourseName']
+                            password: submitted_password
                         },
 
                         success: function(response_text) // response_text - is what you output based on user login information, lets suggest you output numbers i.e. 1 means logged in, 2 password incorred, 3 any other reason...
@@ -178,7 +182,7 @@ require('../scripts/db.php');
                                 show_loading_bar({
                                     pct: 100,
                                     finish: function(pct) {
-                                        toastr.info("Course Inserted Successfully");
+                                        toastr.info("Login Successful");
                                         hide_loading_bar();
                                     }
                                 });
@@ -186,7 +190,7 @@ require('../scripts/db.php');
                                 show_loading_bar({
                                     pct: 100,
                                     finish: function(pct) {
-                                        toastr.info("Course Updated Successfully");
+                                        toastr.info("Login Successful");
                                         hide_loading_bar();
                                     }
                                 });
