@@ -40,6 +40,29 @@
 				</li>
 				<li class="has-sub">
 					<a href="">
+						<i class="entypo-login"></i>
+						<span class="title">Login</span>
+					</a>
+					<ul>
+						<li>
+							<a href="../pages/adminlogin.php">
+								<span class="title">Admin Login</span>
+							</a>
+						</li>
+						<li>
+							<a href="../pages/studentlogin.php">
+								<span class="title">Student Login</span>
+							</a>
+						</li>
+						<li>
+							<a href="../pages/facultylogin.php">
+								<span class="title">Faculty Login</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="">
 						<i class="entypo-layout"></i>
 						<span class="title">Course</span>
 					</a>
@@ -122,13 +145,13 @@
 					</a>
 				</li>
 				<li>
-					<a href="index.html">
+					<a href="addvideos.php">
 						<i class="entypo-play"></i>
 						<span class="title">Videos</span>
 					</a>
 				</li>
 				<li>
-					<a href="index.html">
+					<a href="addbooks.php">
 						<i class="entypo-book"></i>
 						<span class="title">Books</span>
 					</a>
@@ -146,7 +169,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="index.html">
+					<a href="newsfeed.php">
 						<i class="entypo-newspaper"></i>
 						<span class="title">Newsfeed</span>
 					</a>
