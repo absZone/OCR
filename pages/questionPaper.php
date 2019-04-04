@@ -90,44 +90,53 @@ require('../scripts/db.php');
                                 <div class="form-group">
                                     <input type="text" placeholder="Question " name="question" class="form-control" required>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
+                                <div class="col-md-1">
+                                
                                     <input type="radio" name="radio" value="1" class="form-control">
                                 </div>
-
-                                <div class="col-md-6">
-                                    <input type="text" placeholder="Option 1" name="optionOne" class="form-control" required>
-                                </div>
+                                    <div class="col-md-6">
                                 
-
-                                <div class="col-md-6">
+                                    <input type="text" placeholder="Option 1" name="optionOne" class="form-control" required>
+                                
+                                </div>
+                                </div>
+                                <div class="col-md-12">
+                                <div class="col-md-1">
                                     <input type="radio" name="radio" value="2" class="form-control">
                                 </div>
+
 
                                 <div class="col-md-6">
                                     <input type="text" placeholder="Option 2" name="optionTwo" class="form-control" required>
                                 </div>
-                               
-
-                                <div class="col-md-6">
+                                </div>
+                                <div class="col-md-12">
+                                <div class="col-md-1">
                                     <input type="radio" name="radio" value="3" class="form-control">
                                 </div>
-
+                               
+                               
                                 <div class="col-md-6">
                                     <input type="text" placeholder="Option 3" name="optionThree" class="form-control" required>
                                 </div>
-                               
-
-                                <div class="col-md-6">
-                                    <input type="radio" name="radio" value="4" class="form-control">
                                 </div>
 
+                                <div class="col-md-12">
+                                <div class="col-md-1">
+                                    <input type="radio" name="radio" value="4" class="form-control">
+                                </div>
+                                
                                 <div class="col-md-6">
                                     <input type="text" placeholder="Option 4" name="optionFour" class="form-control" required>
                                 </div>
+                                </div>
+                                
+
+                                
                                 
 
                                 <hr />
-
                                 <div class="form-group">
                                     <!-- go to last script tag for form submit understanding -->
                                     <button type="submit" id="submit" class="btn btn-success">Submit</button>
