@@ -23,8 +23,9 @@ require('db.php');
 			//UUID stored in this variable
 		}
 	}
-	if(mysqli_query($con, "INSERT INTO student(studentId,courseTypeId,loginId,password,firstName,lastName,age,gender,address,phoneNo)
-	 VALUES('$studentId','$courseTypeId','$loginId','$encryptPassword','$firstName','$lastName','$age','$gender','$address','$phoneNo')"))
+	$sqlInsert ="INSERT INTO student(studentId,loginId,password,firstName,lastName,age,courseTypeId,gender,address,phoneNo)
+	VALUES('$studentId','$loginId','$encryptPassword','$firstName','$lastName','$age','$courseTypeId',,'$gender','$address','$phoneNo')";
+	if(mysqli_query($con,$sqlInsert))
 {
             $msg = 1;
   
@@ -35,27 +36,27 @@ require('db.php');
 	}
 
 echo $msg;
-if($courseTypeId != '9cb4211e-461f-11e9-acdc-c8d3fff0df35')
-{
-	$courseQuery = "Select * from course Where courseTypeId='$courseTypeId'";
-	$result=mysqli_query($con,$courseQuery);
-	if(mysqli_num_rows($result)>0)
-	{
-		echo "<br>Subject Added for this Course Type<br>";
-		$inc=1;
-		while($row=mysqli_fetch_assoc($result))
-		{
-			$courseId=$row["courseId"];
-			$insertCourse="INSERT INTO student_course VALUE(UUID(),'$studentId','$courseId')";
-			mysqli_query($con,$insertCourse);
-			echo "<br>Subject ".$inc++." = ".$row["courseName"];
-		}
-	}
-	else {
-		echo "<br>No Availabe Subject for this Course Type<br>";
-	}
-}
-else{
-	echo "<br>Assign a Subject for this Course Type<br>";
-}
+// if($courseTypeId != '9cb4211e-461f-11e9-acdc-c8d3fff0df35')
+// {
+// 	$courseQuery = "Select * from course Where courseTypeId='$courseTypeId'";
+// 	$result=mysqli_query($con,$courseQuery);
+// 	if(mysqli_num_rows($result)>0)
+// 	{
+// 		echo "<br>Subject Added for this Course Type<br>";
+// 		$inc=1;
+// 		while($row=mysqli_fetch_assoc($result))
+// 		{
+// 			$courseId=$row["courseId"];
+// 			$insertCourse="INSERT INTO student_course VALUE(UUID(),'$studentId','$courseId')";
+// 			mysqli_query($con,$insertCourse);
+// 			echo "<br>Subject ".$inc++." = ".$row["courseName"];
+// 		}
+// 	}
+// 	else {
+// 		echo "<br>No Availabe Subject for this Course Type<br>";
+// 	}
+// }
+// else{
+// 	echo "<br>Assign a Subject for this Course Type<br>";
+// }
 ?>
