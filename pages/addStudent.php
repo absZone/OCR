@@ -104,7 +104,7 @@ require('../scripts/db.php');
                                 <div class="form-group">
                                     <label class="control-label">Select Course Type</label>
 
-                                    <select name="courseTypeId" id="inputCourseType" class="form-control">
+                                    <select name="courseTypeId" id="courseTypeId" class="form-control">
                                         <?php
                                         $query = "SELECT * FROM course_type";
                                         if ($result2 = mysqli_query($con, $query)) {
@@ -192,7 +192,7 @@ require('../scripts/db.php');
         <script src="../assets/js/toastr.js"></script>
         <script>
             //form id #form1, call validation of form
-            $("#form1").validate({
+            $("#form3").validate({
                 //setup rules for validation
                 rules: {
                     
