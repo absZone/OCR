@@ -7,7 +7,7 @@
 				<!-- logo -->
 				<div class="logo">
 					<a href="index.html">
-						<img src="../assets/images/logo@2x.png" width="120" alt="" />
+						<p style="font-size:15px"><b>ONLINE CLASSSROOM</b></p>
 					</a>
 				</div>
 
