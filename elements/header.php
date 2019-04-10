@@ -1,174 +1,90 @@
-<?php
-include('./scripts/globalVar.php');
-?>
-<div class="overlay"></div>
-<!-- Sidebar -->
-<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-    <ul class="nav sidebar-nav">
-        <li class="sidebar-brand">
-            <a href="#">
-                ONLINE CLASSROOM
-            </a>
-        </li>
-        <?php
-        if (!(isset($_SESSION['key']))) {
-            ?>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a tabindex="-1" href="adminlogin.php">Admin Login</a></li>
-                <li><a tabindex="-1" href="facultylogin.php">Faculty Login</a></li>
-                <li><a tabindex="-1" href="studentlogin.php">Student Login</a></li>
+<div class="sidebar-menu">
 
+		<div class="sidebar-menu-inner">
+			
+			<header class="logo-env">
 
-            </ul>
-        </li>
-        <?php
+				<!-- logo -->
+				<div class="logo">
+					<a href="index.html">
+						<p style="font-size:15px"><b>ONLINE CLASSSROOM</b></p>
+					</a>
+				</div>
 
-    }
-    ?>
+				<!-- logo collapse icon -->
+				<div class="sidebar-collapse">
+					<a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
 
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Course <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-            <?php
-            if (isset($_SESSION['key']) && $_SESSION['type'] == 'admin') {
-                ?>  
-                <li><a tabindex="-1" href="./addcourse.php">Add Course</a></li>
-                <?php
+								
+				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+				<div class="sidebar-mobile-menu visible-xs">
+					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+						<i class="entypo-menu"></i>
+					</a>
+				</div>
 
-            }
-            ?>
-
-                <li><a tabindex="-1" href="#">View Courses</a></li>
-            </ul>
-        </li>
-        <?php
-        if (isset($_SESSION['key'])) {
-            ?>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exam <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-            <?php
-            if (isset($_SESSION['key']) && $_SESSION['type'] == 'faculty') {
-                ?>
-                <li><a tabindex="-1" href="questionpaper.php">Create Question Paper</a></li>
-                <?php 
-            }
-
-
-            if (isset($_SESSION['key']) && $_SESSION['type'] == 'student') { ?>
-                <li><a tabindex="-1" href="#">Give Exams</a></li>
-             <?php 
-        } ?>
-            </ul>
-        </li>
-            <?php 
-        } ?>
-        <li class="dropdown">
-        <?php
-        if (isset($_SESSION['key'])) {
-            ?>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Videos<span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-            <?php
-            if (isset($_SESSION['key']) && $_SESSION['type'] == 'faculty') {
-                ?>
-                <li><a tabindex="-1" href="addvideo.php">Add Videos</a></li>
-                <?php 
-            }
-
-
-            if (isset($_SESSION['key']) && $_SESSION['type'] == 'student') { ?>
-                <li><a tabindex="-1" href="#">View Videos</a></li>
-                <?php 
-            } ?>
-            </ul>
-        </li>
-        <?php 
-    } ?>
-        <li class="dropdown">
-        <?php
-        if (isset($_SESSION['key'])) {
-            ?>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Books<span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-            <?php
-            if (isset($_SESSION['key']) && $_SESSION['type'] == 'faculty') {
-                ?>
-                <li><a tabindex="-1" href="addbook.php">Add Books </a></li>
-                <?php 
-            }
-
-
-            if (isset($_SESSION['key']) && $_SESSION['type'] == 'student') { ?>
-                <li><a tabindex="-1" href="#">View Books </a></li>
-                <?php 
-            } ?>
-            </ul>
-        </li>
-        <li>
-        <?php 
-    } ?>
-            <a href="results.php">Results</a>
-        </li>
-        <li>
-            <a href="#">Notification</a>
-        </li>
-        <li>
-            <a href="#">Counselling</a>
-        </li>
-        <li>
-            <a href="#">Certification</a>
-        </li>
-        <li>
-            <a href="news.php">Newsfeed</a>
-        </li>
-        <li>
-            <a href="#">Mediakit</a>
-        </li>
-        <li>
-            <a href="#">Feedback</a>
-        </li>
-        <!-- <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li class="dropdown-header">Dropdown heading</li>
-                    <li><a href="#">Action</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Another action</a>
-					<ul class="dropdown-menu" role="menu">
-					<li><a href="#">Action</a></li>
-					</ul>
-					</li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-				</li> -->
-
-
-        <!--
-				<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
-				<ul class="dropdown-menu" role="menu">
-					<li><a tabindex="-1" href="#">HTML</a></li>
-					<li><a tabindex="-1" href="#">CSS</a></li>
-					<li class="dropdown-submenu">
-						<a class="test" tabindex="-1" href="#">New dropdown <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-						<li><a tabindex="-1" href="#">2nd level dropdown</a></li>
-						<li><a tabindex="-1" href="#">2nd level dropdown</a></li>
-						<li class="dropdown-submenu">
-							<a class="test" href="#">Another dropdown <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-							<li><a href="#">3rd level dropdown</a></li>
-							<li><a href="#">3rd level dropdown</a></li>
-							</ul>
+			</header>
+			
+									
+			<ul id="main-menu" class="main-menu">
+				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+				<li>
+					<a href="../pages/dashboard.php">
+						<i class="entypo-gauge"></i>
+						<span class="title">Dashboard</span>
+					</a>
+				</li>
+				<li class="has-sub">
+					<a href="">
+						<i class="entypo-login"></i>
+						<span class="title">Login</span>
+					</a>
+					<ul>
+						<li>
+							<a href="../pages/adminlogin.php">
+								<span class="title">Admin Login</span>
+							</a>
 						</li>
-						</ul>
-					</li>
+						<li>
+							<a href="../pages/studentlogin.php">
+								<span class="title">Student Login</span>
+							</a>
+						</li>
+						<li>
+							<a href="../pages/facultylogin.php">
+								<span class="title">Faculty Login</span>
+							</a>
+						</li>
 					</ul>
 				</li>
+				<li class="has-sub">
+					<a href="">
+						<i class="entypo-layout"></i>
+						<span class="title">Course</span>
+					</a>
+					<ul>
+						<li>
+							<a href="../pages/addCourse.php">
+								<span class="title">Add Course</span>
+							</a>
+						</li>
+						<li>
+							<a href="../pages/viewCourse.php">
+								<span class="title">View Course</span>
+							</a>
+						</li>
+						<li>
+							<a href="../pages/assignCourse.php">
+								<span class="title">Assign Course</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+<<<<<<< HEAD
 -->
 
     </ul>
@@ -198,13 +114,100 @@ include('./scripts/globalVar.php');
                             ?>
                             <li class="btn-cta"><a href="adminlogin.php"><span>Login</span></a></li>
                             <?php
+=======
+				<li class="has-sub">
+					<a href="layout-api.html">
+						<i class="entypo-users"></i>
+						<span class="title">Faculties</span>
+					</a>
+					<ul>
+						<li>
+							<a href="../pages/addFaculty.php">
+								<span class="title">Add Faculty</span>
+							</a>
+						</li>
+						<li>
+							<a href="layout-collapsed-sidebar.html">
+								<span class="title">View Faculty</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="layout-api.html">
+						<i class="entypo-vcard"></i>
+						<span class="title">Students</span>
+					</a>
+					<ul>
+						<li>
+							<a href="addStudent.php">
+								<span class="title">Add Students</span>
+							</a>
+						</li>
+						<li>
+							<a href="layout-collapsed-sidebar.html">
+								<span class="title">View Students</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="has-sub">
+					<a href="layout-api.html">
+						<i class="entypo-doc-text"></i>
+						<span class="title">Exam</span>
+					</a>
+					<ul>
+						<li>
+							<a href="questionPaper.php">
+								<span class="title">Add Question & Answers</span>
+							</a>
+						</li>
+						<li>
+							<a href="layout-collapsed-sidebar.html">
+								<span class="title">Give Exams</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="index.html">
+						<i class="entypo-docs"></i>
+						<span class="title">Result</span>
+					</a>
+				</li>
+				<li>
+					<a href="addvideos.php">
+						<i class="entypo-play"></i>
+						<span class="title">Videos</span>
+					</a>
+				</li>
+				<li>
+					<a href="addbooks.php">
+						<i class="entypo-book"></i>
+						<span class="title">Books</span>
+					</a>
+				</li>
+				<li>
+					<a href="index.html">
+						<i class="entypo-direction"></i>
+						<span class="title">Counselling</span>
+					</a>
+				</li>
+				<li>
+					<a href="index.html">
+						<i class="entypo-flag"></i>
+						<span class="title">Certification</span>
+					</a>
+				</li>
+				<li>
+					<a href="newsfeed.php">
+						<i class="entypo-newspaper"></i>
+						<span class="title">Newsfeed</span>
+					</a>
+				</li>
+			</ul>
+			
+		</div>
+>>>>>>> d7bc2e0689f7f7522b0695fa3f4222a7f6ba9dd2
 
-                        }
-                        ?>
-                        </ul>
-                    </div>
-                </p>
-            </div>
-        </div>
-    </div>
-</nav> 
+	</div>

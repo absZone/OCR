@@ -1,23 +1,17 @@
 <?php
 
 require('db.php');
-   $courseName = mysqli_real_escape_string($con, $_POST['courseName']);
-   $courseType = mysqli_real_escape_string($con, $_POST['courseTypeId']);
+   $courseName = mysqli_real_escape_string($con, $_POST['CourseName']);
+   $courseType = mysqli_real_escape_string($con, $_POST['CourseType']);
    $sqlInsert = "INSERT INTO course(courseId,courseTypeId,courseName) 
 	VALUES(UUID(),'$courseType','$courseName')";
     if(mysqli_query($con,$sqlInsert))
     {
-        $msg = 'Congratulation you have successfully registered.';
-    
-    
-   
-}
+        $msg = 1;
+    }
 else
 {
-        $msg = 'Error while registering you...';
-
-   
-    
+        $msg = 3;  
 }
 
 echo $msg;
