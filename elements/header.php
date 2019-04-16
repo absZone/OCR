@@ -7,7 +7,7 @@
 				<!-- logo -->
 				<div class="logo">
 					<a href="index.html">
-						<p style="font-size:15px"><b>ONLINE CLASSSROOM</b></p>
+						<img src="../assets/images/logo@2x.png" width="120" alt="" />
 					</a>
 				</div>
 
@@ -40,29 +40,6 @@
 				</li>
 				<li class="has-sub">
 					<a href="">
-						<i class="entypo-login"></i>
-						<span class="title">Login</span>
-					</a>
-					<ul>
-						<li>
-							<a href="../pages/adminlogin.php">
-								<span class="title">Admin Login</span>
-							</a>
-						</li>
-						<li>
-							<a href="../pages/studentlogin.php">
-								<span class="title">Student Login</span>
-							</a>
-						</li>
-						<li>
-							<a href="../pages/facultylogin.php">
-								<span class="title">Faculty Login</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li class="has-sub">
-					<a href="">
 						<i class="entypo-layout"></i>
 						<span class="title">Course</span>
 					</a>
@@ -84,37 +61,6 @@
 						</li>
 					</ul>
 				</li>
-<<<<<<< HEAD
--->
-
-    </ul>
-</nav>
-
-
-<nav class="colorlib-nav" role="navigation">
-    <div class="top-menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2">
-                    <div id="colorlib-logo"><a href="index.php">ONLINE CLASSROOM</a></div>
-                </div>
-                <p>
-                    <div>
-                        <ul>
-                            <li class="active"><a href="index.php">Home</a></li>
-                            <li><a href="carrer.php">Career</a></li>
-                            <li><a href="#">Games</a></li>
-                            <li><a href="about.php">About Us</a></li>
-                            <?php
-                            if ($isLogIn) {
-                                ?>
-                            <li class="btn-cta"><a href="./scripts/logout.php"><span>Logout</span></a></li>
-                            <?php 
-                        } else {
-                            ?>
-                            <li class="btn-cta"><a href="adminlogin.php"><span>Login</span></a></li>
-                            <?php
-=======
 				<li class="has-sub">
 					<a href="layout-api.html">
 						<i class="entypo-users"></i>
@@ -176,13 +122,13 @@
 					</a>
 				</li>
 				<li>
-					<a href="addvideos.php">
+					<a href="index.html">
 						<i class="entypo-play"></i>
 						<span class="title">Videos</span>
 					</a>
 				</li>
 				<li>
-					<a href="addbooks.php">
+					<a href="index.html">
 						<i class="entypo-book"></i>
 						<span class="title">Books</span>
 					</a>
@@ -200,7 +146,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="newsfeed.php">
+					<a href="index.html">
 						<i class="entypo-newspaper"></i>
 						<span class="title">Newsfeed</span>
 					</a>
@@ -208,6 +154,5 @@
 			</ul>
 			
 		</div>
->>>>>>> d7bc2e0689f7f7522b0695fa3f4222a7f6ba9dd2
 
 	</div>
