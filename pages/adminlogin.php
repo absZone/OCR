@@ -183,6 +183,7 @@ require('../scripts/db.php');
                                     pct: 100,
                                     finish: function(pct) {
                                         toastr.info("Login Successful");
+                                        console.log(response_text);
                                         hide_loading_bar();
                                     }
                                 });
