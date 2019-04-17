@@ -174,6 +174,12 @@
 						<span class="title">Newsfeed</span>
 					</a>
 				</li>
+				<li>
+					<a href="index.html">
+						<i class="entypo-docs"></i>
+						<span class="title">Mediakit</span>
+					</a>
+				</li>
 			</ul>
 			
 		</div>
