@@ -68,12 +68,12 @@ require('../scripts/db.php');
 
                         <!-- panel body -->
                         <div class="panel-body">
-                            <form role="form" id="form6" method="post" class="validate" enctype="multipart/form-data">
+                            <form role="form" id="form6" enctype="multipart/form-data" method="post" class="validate" enctype="multipart/form-data">
 
 
                                 <div class="form-group">
                                     <label class="control-label">Select Course:</label>
-                                    <select name="courseId" id="inputCourse" class="form-control">
+                                    <select name="courseId" id="courseId" class="form-control">
                                         <?php
                                         $query = "SELECT * FROM course";
                                         $result2 = mysqli_query($con, $query);
@@ -88,7 +88,7 @@ require('../scripts/db.php');
                                 <div class="form-group">
                                     <label class="control-label">Upload PDF</label>
 
-                                    <input type="file" name="pdf" accept=".pdf">
+                                    <input type="file" name="classnotes" id="classnotes" accept=".pdf">
                                 </div>
                                 <div class="form-group">
                                     <!-- go to last script tag for form submit understanding -->
@@ -136,27 +136,25 @@ require('../scripts/db.php');
                 //setup rules for validation
                 rules: {
                     //element id courseName
-                    courseName: {
+                    courseId: {
                         //validation property
                         required: true,
-                        minlength: 3,
-                        maxlength: 20
+                       
                     },
-                    courseType: {
+                    classnotes: {
                         required: true
                     }
                 },
                 //display error messages
                 messages: {
                     //element id courseName
-                    courseName: {
+                    courseId: {
                         //validation property and message value
                         required: 'Required Field',
-                        minlength: 'Required atleast 3 characters',
-                        maxlength: 'Required atmost 20 characters'
+                        
                     },
-                    courseType: {
-                        required: 'Select Type of Course...'
+                    classnotes: {
+                        required: 'Select File..'
                     },
                 },
                 //Call Element Validation on focus out from element
@@ -166,28 +164,29 @@ require('../scripts/db.php');
                 //Call Form Validation on Submit
                 submitHandler: function(form) {
                     show_loading_bar(20);
-
-                    var submitted_courseName = $("#courseName").val(),
-                        submitted_courseType = $("#courseType").val();
+                    var file_data = $('#classnotes').prop('files')[0];
+                    var form_data = new FormData($("#form6")[0]);
+                    // form_data.append('file', file_data);
 
 
                     $.ajax({
                         url: "../scripts/addbooksscript.php", // Your php script to wait for login connections and set login sessions
                         type: "POST",
+                        enctype: 'multipart/form-data',
                         // You can access the user and pass with $_POST['username'] and $_POST['password']
-                        data: {
-                            CourseName: submitted_courseName, //$_POST['CourseName']
-                            CourseType: submitted_courseType
-                        },
-
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        data: form_data,
                         success: function(response_text) // response_text - is what you output based on user login information, lets suggest you output numbers i.e. 1 means logged in, 2 password incorred, 3 any other reason...
                         {
+                            
                             show_loading_bar(65);
                             if (response_text == 1) {
                                 show_loading_bar({
                                     pct: 100,
                                     finish: function(pct) {
-                                        toastr.info("Course Inserted Successfully");
+                                        toastr.info("Book Inserted Successfully");
                                         hide_loading_bar();
                                     }
                                 });
@@ -209,6 +208,9 @@ require('../scripts/db.php');
                                 });
                             }
                             document.getElementById("form6").reset();
+                        },
+                        error: function (response) {
+                            toastr.info(response); // display error response from the PHP script
                         }
                     });
                     return false;
