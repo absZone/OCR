@@ -132,7 +132,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="layout-collapsed-sidebar.html">
+							<a href="givexam.php">
 								<span class="title">Give Exams</span>
 							</a>
 						</li>
@@ -163,7 +163,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="index.html">
+					<a href="certificate.php">
 						<i class="entypo-flag"></i>
 						<span class="title">Certification</span>
 					</a>
