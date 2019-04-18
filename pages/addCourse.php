@@ -1,5 +1,14 @@
 <?php session_start();
 require('../scripts/db.php');
+if($_SESSION['type']=='student') {
+	header("Location:../dashboard.php");
+}
+else if($_SESSION['type']=='faculty') {
+	header("Location:../dashboard.php");
+}
+else {
+	
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,3 +1,20 @@
+<?php session_start(); 
+if($_SESSION['type']=='student') {
+	$student=true;
+	$faculty=false;
+	$admin=false;
+}
+else if($_SESSION['type']=='faculty') {
+	$student=false;
+	$faculty=true;
+	$admin=false;
+}
+else {
+	$student=false;
+	$faculty=false;
+	$admin=true;
+}
+?>
 <div class="sidebar-menu">
 
 		<div class="sidebar-menu-inner">
@@ -40,48 +57,29 @@
 				</li>
 				<li class="has-sub">
 					<a href="">
-						<i class="entypo-login"></i>
-						<span class="title">Login</span>
-					</a>
-					<ul>
-						<li>
-							<a href="../pages/adminlogin.php">
-								<span class="title">Admin Login</span>
-							</a>
-						</li>
-						<li>
-							<a href="../pages/studentlogin.php">
-								<span class="title">Student Login</span>
-							</a>
-						</li>
-						<li>
-							<a href="../pages/facultylogin.php">
-								<span class="title">Faculty Login</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li class="has-sub">
-					<a href="">
 						<i class="entypo-layout"></i>
 						<span class="title">Course</span>
 					</a>
 					<ul>
+						<?php if($admin) {?>
 						<li>
 							<a href="../pages/addCourse.php">
 								<span class="title">Add Course</span>
 							</a>
 						</li>
+						<?php } ?>
 						<li>
 							<a href="../pages/viewCourse.php">
 								<span class="title">View Course</span>
 							</a>
 						</li>
+						<?php if($admin) {?>
 						<li>
 							<a href="../pages/assignCourse.php">
 								<span class="title">Assign Course</span>
 							</a>
 						</li>
+						<?php } ?>
 					</ul>
 				</li>
 				<li class="has-sub">
@@ -90,11 +88,13 @@
 						<span class="title">Faculties</span>
 					</a>
 					<ul>
+					<?php if($admin) {?>
 						<li>
 							<a href="../pages/addFaculty.php">
 								<span class="title">Add Faculty</span>
 							</a>
 						</li>
+						<?php } ?>
 						<li>
 							<a href="layout-collapsed-sidebar.html">
 								<span class="title">View Faculty</span>
@@ -102,17 +102,20 @@
 						</li>
 					</ul>
 				</li>
+				<?php if($admin || $faculty) {?>
 				<li class="has-sub">
 					<a href="layout-api.html">
 						<i class="entypo-vcard"></i>
 						<span class="title">Students</span>
 					</a>
 					<ul>
+					<?php if($admin) {?>
 						<li>
 							<a href="addStudent.php">
 								<span class="title">Add Students</span>
 							</a>
 						</li>
+					<?php } ?>
 						<li>
 							<a href="layout-collapsed-sidebar.html">
 								<span class="title">View Students</span>
@@ -120,22 +123,27 @@
 						</li>
 					</ul>
 				</li>
+				<?php } ?>
 				<li class="has-sub">
 					<a href="layout-api.html">
 						<i class="entypo-doc-text"></i>
 						<span class="title">Exam</span>
 					</a>
 					<ul>
+					<?php if($admin || $faculty) {?>
 						<li>
 							<a href="questionPaper.php">
 								<span class="title">Add Question & Answers</span>
 							</a>
 						</li>
+						<?php } ?>
+						<?php if($student) {?>
 						<li>
 							<a href="givexam.php">
 								<span class="title">Give Exams</span>
 							</a>
 						</li>
+						<?php } ?>
 					</ul>
 				</li>
 				<li>

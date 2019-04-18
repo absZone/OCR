@@ -1,6 +1,20 @@
-<?php 
-session_start();
+<?php session_start();
 require('../scripts/db.php');
+if($_SESSION['type']=='student') {
+	$student=true;
+	$faculty=false;
+	$admin=false;
+}
+else if($_SESSION['type']=='faculty') {
+	$student=false;
+	$faculty=true;
+	$admin=false;
+}
+else {
+	$student=false;
+	$faculty=false;
+	$admin=true;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,7 +93,13 @@ require('../scripts/db.php');
 
                                 <tbody>
                                     <?php
-									$query = "Select course.courseId, course.courseName, course_type.courseType from course Left JOIN course_type on course.courseTypeId = course_type.courseTypeId";
+                                    if($admin || $faculty) {
+                                        $query = "Select course.courseId, course.courseName, course_type.courseType from course Left JOIN course_type on course.courseTypeId = course_type.courseTypeId";
+                                    } else {
+                                        $user = $_SESSION['key'];
+                                        $query = "Select course.courseName, course_type.courseType from student_course Inner Join course on student_course.courseId = course.courseId Inner Join course_type on course.courseTypeId = course_type.courseTypeId where student_course.studentId = '$user' ";
+                                    }
+									
 									$result = mysqli_query($con, $query);
 									$i = 0;
 									while ($row = mysqli_fetch_array($result)) {

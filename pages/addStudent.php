@@ -1,5 +1,14 @@
 <?php session_start();
 require('../scripts/db.php');
+if($_SESSION['type']=='student') {
+	header("Location:../dashboard.php");
+}
+else if($_SESSION['type']=='faculty') {
+	header("Location:../dashboard.php");
+}
+else {
+	
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -108,10 +117,8 @@ require('../scripts/db.php');
                                         <?php
                                         $query = "SELECT * FROM course_type";
                                         if ($result2 = mysqli_query($con, $query)) {
-                                            echo 'successful';
-                                        } else {
-                                            echo 'unsuccessfull';
-                                        }
+                                            
+                                        } 
 
                                         while ($row = mysqli_fetch_array($result2)) {
                                             ?>
