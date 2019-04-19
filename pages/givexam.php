@@ -74,21 +74,35 @@ if ($_SESSION['type'] == 'student') { } else if ($_SESSION['type'] == 'faculty')
 						<!-- panel body -->
 						<div class="panel-body">
 							<div id="courseSel">
+								<form action="questions.php" method="post">
 								<div class="form-group">
 									<label class="control-label">CourseType:</label>
 									<select required id="courseId" name="courseId" class="form-control">
 										<option value="">Select ..</option>
 										<?php
 										$userId = $_SESSION['key'];
-										$query = "SELECT course.courseId, course.courseName FROM course
-										INNER JOIN student_course
+										// $query = "SELECT course.courseId, course.courseName,
+										// (Select COUNT(result.reusltId) from result WHERE result.studentId = '$userId' AND result.courseId = course.courseId) as Disabled
+										// FROM course
+										// INNER JOIN student_course 
+										// on course.courseId = student_course.courseId
+										// WHERE student_course.studentId = '$userId'";
+										$query = "SELECT course.courseId, course.courseName, result.courseId as id
+										FROM course
+										LEFT JOIN student_course 
 										on course.courseId = student_course.courseId
+										LEFT JOIN result on
+										student_course.courseId = result.courseId
 										WHERE student_course.studentId = '$userId'";
 										$result = mysqli_query($con, $query);
 										while ($row = mysqli_fetch_array($result)) {
+											$disabled = false;
+											if($row['id']==NULL){
+												
 											?>
-											<option value="<?php echo $row["courseId"]; ?>">
-												<?php echo $row["courseName"]; ?>
+											<option value="<?php $courseId = $row["courseId"];
+															echo $row["courseId"]; ?>">
+												<?php } echo $row["courseName"]; ?>
 											</option>
 										<?php
 									} ?>
@@ -97,20 +111,12 @@ if ($_SESSION['type'] == 'student') { } else if ($_SESSION['type'] == 'faculty')
 
 								<div class="form-group">
 									<!-- go to last script tag for form submit understanding -->
-									<button id="give" class="btn btn-success">Get Questions</button>
+									<button type="submit" id="give" class="btn btn-success">Get Questions</button>
 									<button type="reset" class="btn">Reset</button>
 								</div>
+								</form>
 
 							</div>
-
-
-							<script>
-								$("#give").click(function() {
-									if ($("#courseId").val() != "")
-										$("#courseSel").hide();
-								});
-							</script>
-
 
 						</div>
 
