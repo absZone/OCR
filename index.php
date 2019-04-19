@@ -50,8 +50,8 @@ if(isset($_SESSION['key'])) {
 			
 				<section class="site-logo">
 				
-					<a href="index.html">
-						<img src="materials/images/logo@2x.png" width="120" />
+					
+						<h1><b>ONLINE CLASSROOM<b></h2>
 					</a>
 					
 				</section>
@@ -60,7 +60,7 @@ if(isset($_SESSION['key'])) {
 					
 					<ul class="main-menu hidden-xs" id="main-menu">
 						<li class="active">
-							<a href="index.html">
+							<a href="index.php">
 								<span>Home</span>
 							</a>
 						</li>
@@ -123,19 +123,19 @@ if(isset($_SESSION['key'])) {
 					
 						<div class="slide-content">
 							<h2>
-								<small>Neon - Bootstrap 3</small>
-								Dashboard &amp; Front-end
+								<small>BOOKS AND VIDEOS</small>
+								ALL STUDY MATERIALS 
 							</h2>
 							
 							<p>
-								Neon &ndash; is flat admin template for multi-purpose usage built<br /> with the latest version of Bootstrap &ndash; 3.
+								You can access all the books and video lectures provided by our faculties.
 							</p>
 						</div>
 						
 						<div class="slide-image">
 							
 							<a href="#">
-								<img src="materials/images/slide-img-1.png" class="img-responsive" />
+								<img src="materials/images/studypic.jpg" class="img-responsive" />
 							</a>
 						</div>
 						
@@ -147,20 +147,19 @@ if(isset($_SESSION['key'])) {
 						<div class="slide-image">
 							
 							<a href="#">
-								<img src="materials/images/slide-img-1.png" class="img-responsive" />
+								<img src="materials/images/codeimage1.jpg" class="img-responsive" />
 							</a>
 						</div>
 					
 						<div class="slide-content text-right">
 							<h2>
-								<small>Neon - Bootstrap 3</small>
-								Powerful Admin Template
+								<small>CODE</small>
+								WRITE YOUR FIRST CODE
 							</h2>
 							
 							<p>
-								Designed for Bootstrap Framework, the theme works <br />
-								perfectly on any device, you can use it on<br />
-								 your smartphone, tablet or your laptop.
+								With the help of our teachers youcan start your coding as well as you can be able to make whole 
+								project.
 							</p>
 							
 						</div>
@@ -172,20 +171,20 @@ if(isset($_SESSION['key'])) {
 					
 						<div class="slide-content">
 							<h2>
-								<small>Neon - Bootstrap 3</small>
-								Responsive &amp; Retina
+								<small>ALL SUBJECTS</small>
+								FROM INDIVIDUAL TO SEMESTERS
 							</h2>
 							
 							<p>
-								Device type is not a problem if you use Neon theme for your application UI.<br />
-								It's packed with latest Bootstrap framework and it's compatible for Large Screens, Tablets and Smartphones.
+								All the subjects included in Bachelors of Information Technology are there in ONLINE CLASSROOM.
+								Need not to run for extra classes by paying large amount. 
 							</p>
 						</div>
 						
 						<div class="slide-image">
 							
 							<a href="#">
-								<img src="materials/images/slide-img-1.png" class="img-responsive" />
+								<img src="materials/images/coding.jpg" class="img-responsive" />
 							</a>
 						</div>
 						
@@ -255,7 +254,7 @@ if(isset($_SESSION['key'])) {
 					</h3>
 					
 					<p>
-						Extremely eagerness principle estimable own was man. Men received far his dashwood subjects new.
+						You can ask your queries realted to the study anytime.We are always there to help you.
 					</p>
 				</div>
 				
@@ -273,8 +272,8 @@ if(isset($_SESSION['key'])) {
 	</div>
 	
 </section>
-<!-- Portfolio -->
-<section class="portfolio-widget">
+Portfolio
+ <section class="portfolio-widget">
 	
 	<div class="container">
 		
@@ -292,7 +291,7 @@ if(isset($_SESSION['key'])) {
 				
 			</div>
 			
-			<div class="col-sm-3">
+			<div class="col-sm-3"> 
 				
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
@@ -366,11 +365,11 @@ if(isset($_SESSION['key'])) {
 			
 		</div>
 		
-	</div>
+	</div> -->
 	
 </section>
 <!-- Call for Action Button -->
-<div class="container">
+<!-- <div class="container">
 	<div class="row vspace">
 		<div class="col-md-12">
 			
@@ -384,7 +383,7 @@ if(isset($_SESSION['key'])) {
 			
 		</div>
 	</div>
-</div>
+</div> -->
 <!-- Testimonails -->
 <section class="testimonials-container">
 	
@@ -400,11 +399,10 @@ if(isset($_SESSION['key'])) {
 					
 						<blockquote>
 							<p>
-								Vivamus imperdiet felis consectetur onec eget orci adipiscing nunc. <br />
-								Pellentesque fermentum, ante ac interdum ullamcorper.
+							Let yourself feel insecure from time, It will help you grow as an individual.
 							</p>
 							<small>
-								<cite>Art Ramadani</cite> - co-founder at Laborator
+								<cite>Sundar Pichai</cite> - CEO at Google
 							</small>
 						</blockquote>
 						
@@ -519,12 +517,11 @@ if(isset($_SESSION['key'])) {
 			<div class="col-sm-6">
 				
 				<a href="#">
-					<img src="materials/images/logo@2x.png" width="100" />
+					<h2><b>ONLINE CLASSROOM<b></h2>
 				</a>
 				
 				<p>
-					Vivamus imperdiet felis consectetur onec eget orci adipiscing nunc. <br />
-					Pellentesque fermentum, ante ac interdum ullamcorper.
+					Providing all the courses free of cost.
 				</p>
 				
 			</div>
@@ -534,9 +531,9 @@ if(isset($_SESSION['key'])) {
 				<h5>Address</h5>
 				
 				<p>
-					Loop, Inc. <br />
-					795 Park Ave, Suite 120 <br />
-					San Francisco, CA 94107
+					Sheetal Indraprasth<br />
+					Sheetal Nagar<br />
+					Mira Road, 401107
 				</p>
 				
 			</div>
@@ -546,9 +543,8 @@ if(isset($_SESSION['key'])) {
 				<h5>Contact</h5>
 				
 				<p>
-					Phone: +1 (52) 2215-251 <br />
-					Fax: +1 (22) 5138-219 <br />
-					info@laborator.al
+					Phone: 9167820916 <br />
+					email: absonlineclassroom@gmail.com
 				</p>
 				
 			</div>
@@ -567,7 +563,7 @@ if(isset($_SESSION['key'])) {
 		<div class="row">
 			
 			<div class="col-sm-6">
-				Copyright &copy; Neon - All Rights Reserved. 
+				Copyright &copy; ONLINE CLASSROOM - All Rights Reserved. 
 			</div>
 			
 			<div class="col-sm-6">

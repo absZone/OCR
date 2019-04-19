@@ -138,9 +138,9 @@ if(isset($_SESSION['key'])) {
 	</div>
 	
 	<div class="inputGroup inputGroup1">
-		<label for="loginEmail" id="loginEmailLabel">Email</label>
+		<label for="loginEmail" id="loginEmailLabel">Login Id</label>
 		<input type="text" name="loginEmail" id="loginEmail" maxlength="254" />
-		<p class="helper helper1">email@domain.com</p>
+		<p class="helper helper1">Login Id</p>
 	</div>
 	<div class="inputGroup inputGroup2">
 		<label for="loginPassword" id="loginPasswordLabel">Password</label>

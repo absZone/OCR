@@ -140,11 +140,11 @@ if(isset($_SESSION['key'])) {
 	<div class="inputGroup inputGroup1">
 		<label for="loginEmail" id="loginEmailLabel">Email</label>
 		<input type="text" name="loginEmail" id="loginEmail" maxlength="254" />
-		<p class="helper helper1">email@domain.com</p>
+		<p class="helper helper1">Login Id</p>
 	</div>
 	<div class="inputGroup inputGroup2">
-		<label for="loginPassword" id="loginPasswordLabel">Password</label>
-		<input type="password" name="loginPassword" id="loginPassword" />
+		<label for="Password" id="loginPasswordLabel">Password</label>
+		<input type="password" name="Password" id="Password" />
 		<label id="showPasswordToggle" for="showPasswordCheck">Show
 			<input id="showPasswordCheck" type="checkbox"/>
 			<div class="indicator"></div>
