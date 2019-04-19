@@ -154,12 +154,12 @@ if(isset($_SESSION['key'])) {
 						<div class="slide-content text-right">
 							<h2>
 								<small>CODE</small>
-								WRITE YOUR FIRST CODE
+								Learn coding here in detail.
 							</h2>
 							
 							<p>
-								With the help of our teachers youcan start your coding as well as you can be able to make whole 
-								project.
+								With the help of our teachers and study material you can learn  coding.
+								
 							</p>
 							
 						</div>
@@ -209,165 +209,50 @@ if(isset($_SESSION['key'])) {
 	
 </section>
 <!-- Features Blocks -->
-<section class="features-blocks">
-	
-	<div class="container">
-		
-		<div class="row vspace"><!-- "vspace" class is added to distinct this row -->
-			
-			<div class="col-sm-4">
-				
-				<div class="feature-block">
-					<h3>
-						<i class="entypo-cog"></i>
-						Settings
-					</h3>
-					
-					<p>
-						Fifteen no inquiry cordial so resolve garrets as. Impression was estimating surrounded solicitude indulgence son shy.
-					</p>
-				</div>
-				
-			</div>
-			
-			<div class="col-sm-4">
-				
-				<div class="feature-block">
-					<h3>
-						<i class="entypo-gauge"></i>
-						Dashboard
-					</h3>
-					
-					<p>
-						On am we offices expense thought. Its hence ten smile age means. Seven chief sight far point any. Of so high into easy.
-					</p>
-				</div>
-				
-			</div>
-			
-			<div class="col-sm-4">
-				
-				<div class="feature-block">
-					<h3>
-						<i class="entypo-lifebuoy"></i>
-						24/7 Support
-					</h3>
-					
-					<p>
-						You can ask your queries realted to the study anytime.We are always there to help you.
-					</p>
-				</div>
-				
-			</div>
-			
-		</div>
-		
-		<!-- Separator -->
-		<div class="row">
-			<div class="col-md-12">
-				<hr />
-			</div>
-		</div>
-		
-	</div>
-	
-</section>
-Portfolio
- <section class="portfolio-widget">
-	
-	<div class="container">
-		
-		<div class="row">
-			
-			<div class="col-sm-3">
-				
-				<div class="portfolio-info">
-					<h3>
-						<a href="#">Portfolio</a>
-					</h3>
-					
-					<p>Fifteen no inquiry cordial so resolve garrets as. Impression was estimating surrounded solicitude indulgence s...</p>
-				</div>
-				
-			</div>
-			
-			<div class="col-sm-3"> 
-				
-				<!-- Portfolio Item in Widget -->
-				<div class="portfolio-item">
-					<a href="portfolio-single.html" class="image">
-						<img src="materials/images/portfolio-thumb-1.png" class="img-rounded" />
-						<span class="hover-zoom"></span>
-					</a>
-					
-					<h4>
-						<a href="portfolio-single.html" class="like">
-							<i class="entypo-heart"></i>
-						</a>
-						
-						<a href="portfolio-single.html" class="name">Neon</a>
-					</h4>
-					
-					<div class="categories">
-						<a href="portfolio-single.html">Web Design / Development</a>
+<div class="col-md-10 col-md-offset-1 text-center animate-box">
+						<div class="about-wrap">
+							<div class="heading-2">
+								<h2>ABOUT US</h2><br/>
+							</div>
+							<p style="font-size:15px">The online classroom is actually developed to provide the simulation of classrooms in
+the departmental of network for the ease of teachers/presenters and students/participants. It
+aims to complements the effort of educators within the network to integrate the technology
+into their classrooms and circular and to link their schedule to the network in educationally
+productive ways.</p><br/><br/>
+							<p style="font-size:15px">Online classroom is a vision is to empower, enable and connect
+students/participants and teachers/presenters around the departmental network using virtual
+classroom. It provides students with a simulating, positive and enjoyable environment along
+with the opportunity to develop skills that are essential in the 21 st century. Online quiz system
+,lectures/presentations recordings chatting within the network to ask questions and to
+collaborate, file sharing, directory sharing, audio/video input/output device sharing etc.</p><br/><br/>
+						</div>
 					</div>
 				</div>
-				
-			</div>
-			
-			<div class="col-sm-3">
-				
-				<!-- Portfolio Item in Widget -->
-				<div class="portfolio-item">
-					<a href="portfolio-single.html" class="image">
-						<img src="materials/images/portfolio-thumb-1.png" class="img-rounded" />
-						<span class="hover-zoom"></span>
-					</a>
-					
-					<h4>
-						<a href="portfolio-single.html" class="like liked">
-							<i class="entypo-heart"></i>
-						</a>
-						
-						<a href="portfolio-single.html" class="name">Motorola</a>
-					</h4>
-					
-					<div class="categories">
-						<a href="portfolio-single.html">Photography</a>
+				<div class="row">
+					<div class="col-md-4 animate-box">
+						<p style="font-size:15px">Virtual education refers to instruction in a learning environment where
+teachers/presenters and students/participants are separated by time or space, or both and the
+teachers /presenters provide course content through course management applications,
+multimedia resources, the network audio/video conferencing .</p>
+					</div>
+					<div class="col-md-4 animate-box">
+						<p style="font-size:15px">Students from all over the world can enroll in courses offered by any institution.
+They can participate in class activities whenever their schedule permits. Promote active
+learning rather than passive reception.</p>
+					</div>
+					<div class="col-md-4 animate-box">
+						<p style="font-size:15px">The aim of this project is to provide a web enabled interactive model of e-learning in
+which the course material is presented using the advantages of multimedia and hypermedia.
+Present technologies enable the creation of virtual classroom using the internet and its
+resources.</p>
 					</div>
 				</div>
-				
 			</div>
-			
-			<div class="col-sm-3">
-				
-				<!-- Portfolio Item in Widget -->
-				<div class="portfolio-item">
-					<a href="portfolio-single.html" class="image">
-						<img src="materials/images/portfolio-thumb-1.png" class="img-rounded" />
-						<span class="hover-zoom"></span>
-					</a>
-					
-					<h4>
-						<a href="portfolio-single.html" class="like">
-							<i class="entypo-heart"></i>
-						</a>
-						
-						<a href="portfolio-single.html" class="name">Dribbble</a>
-					</h4>
-					
-					<div class="categories">
-						<a href="portfolio-single.html">UI Design</a>
-					</div>
-				</div>
-				
-			</div>
-			
 		</div>
+
 		
-	</div> -->
-	
-</section>
+		
+		
 <!-- Call for Action Button -->
 <!-- <div class="container">
 	<div class="row vspace">
@@ -446,67 +331,7 @@ Portfolio
 	
 </section>
 
-
-<!-- Client Logos -->
-<section class="clients-logos-container">
 	
-	<div class="container">
-		
-		<div class="row">
-			
-			<div class="client-logos carousel slide" data-ride="carousel" data-interval="5000">
-			
-				<div class="carousel-inner">
-				
-					<div class="item active">
-						
-						<a href="#">
-							<img src="materials/images/client-logo-1.png" />
-						</a>
-						
-						<a href="#">
-							<img src="materials/images/client-logo-1.png" />
-						</a>
-						
-						<a href="#">
-							<img src="materials/images/client-logo-1.png" />
-						</a>
-						
-						<a href="#">
-							<img src="materials/images/client-logo-1.png" />
-						</a>
-						
-					</div>
-					
-					<div class="item">
-						
-						<a href="#">
-							<img src="materials/images/client-logo-1.png" />
-						</a>
-						
-						<a href="#">
-							<img src="materials/images/client-logo-1.png" />
-						</a>
-						
-						<a href="#">
-							<img src="materials/images/client-logo-1.png" />
-						</a>
-						
-						<a href="#">
-							<img src="materials/images/client-logo-1.png" />
-						</a>
-						
-					</div>
-					
-				</div>
-				
-			</div>
-			
-		</div>
-		
-	</div>
-	
-</section>	
 	<!-- Footer Widgets -->
 <section class="footer-widgets">
 	

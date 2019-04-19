@@ -165,11 +165,12 @@ else {
 					</a>
 				</li>
 				<li>
-					<a href="index.html">
+					<a href="counselling.php">
 						<i class="entypo-direction"></i>
 						<span class="title">Counselling</span>
 					</a>
 				</li>
+				
 				<li>
 					<a href="certificate.php">
 						<i class="entypo-flag"></i>
@@ -186,6 +187,12 @@ else {
 					<a href="index.html">
 						<i class="entypo-docs"></i>
 						<span class="title">Mediakit</span>
+					</a>
+				</li>
+				<li>
+					<a href="carrer.php">
+						<i class="entypo-direction"></i>
+						<span class="title">Carrer</span>
 					</a>
 				</li>
 			</ul>

@@ -14,7 +14,7 @@ require('../scripts/db.php');
 
     <link rel="icon" href="../assets/images/favicon.ico">
 
-    <title>Neon | Add Course</title>
+    <title>Online Classroom | Newsfeed</title>
 
     <link rel="stylesheet" href="../assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
     <link rel="stylesheet" href="../assets/css/font-icons/entypo/css/entypo.css">
@@ -51,7 +51,7 @@ require('../scripts/db.php');
 
             <ol class="breadcrumb bc-3">
                 <li>
-                    <a href="index.html"><i class="fa-home"></i>Home</a>
+                    <a href="#"><i class="fa-home"></i>Home</a>
                 </li>
                 <li>
                     <a href="#">Newsfeed</a>
