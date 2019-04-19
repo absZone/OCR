@@ -1,8 +1,14 @@
 <?php session_start();
 require('../scripts/db.php');
+if ($_SESSION['type'] == 'student') { } else if ($_SESSION['type'] == 'faculty') {
+	header("Location:../dashboard.php");
+} else {
+	header("Location:../dashboard.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -13,7 +19,7 @@ require('../scripts/db.php');
 
 	<link rel="icon" href="../assets/images/favicon.ico">
 
-	<title>Online Classroom | EXAM</title>
+	<title>Neon | Give Exam</title>
 
 	<link rel="stylesheet" href="../assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="../assets/css/font-icons/entypo/css/entypo.css">
@@ -27,7 +33,7 @@ require('../scripts/db.php');
 	<script src="../assets/js/jquery-1.11.3.min.js"></script>
 
 	<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -36,66 +42,109 @@ require('../scripts/db.php');
 
 
 </head>
+
 <body class="page-body" data-url="http://neon.dev">
-<p class="text-center">
-				Welcome <?php if(!empty($_SESSION['key'])){echo $_SESSION['key'];}?>
-			</p>
-            <form class="form-signin" method="post" id='signin' name="signin" action="questions.php">
-                            <div class="form-group">
-                                <select class="form-control" name="category" id="category">
-                                    <option value="">Choose your category</option>
-                                  <option value="1">Microprocessor Architecture</option>
-                                  <option value="2">Web Programming</option>
-                                  <!-- <option value="3">PHP</option>
-                                  <option value="4">CSS</option>                                 -->
-                                </select>
-                                <span class="help-block"></span>
-                            </div>
 
-                            <br>
-                            <button class="btn btn-success btn-block" type="submit">
-                                SUBMIT
-                            </button>
-                        </form>
+	<div class="page-container">
+		<!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+
+		<?php include('../elements/header.php'); ?>
+
+		<div class="main-content">
+			<?php include('../elements/tobbar.php'); ?>
+			<hr />
+
+			<ol class="breadcrumb bc-3">
+				<li>
+					<a href="index.html"><i class="fa-home"></i>Home</a>
+				</li>
+				<li>
+					<a href="viewCourse.php">Exams</a>
+				</li>
+				<li class="active">
+					<strong>Give</strong>
+				</li>
+			</ol>
+			<h1>Select course</h1>
+			<br>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-primary" data-collapsed="0">
+
+						<!-- panel body -->
+						<div class="panel-body">
+							<div id="courseSel">
+								<div class="form-group">
+									<label class="control-label">CourseType:</label>
+									<select required id="courseId" name="courseId" class="form-control">
+										<option value="">Select ..</option>
+										<?php
+										$userId = $_SESSION['key'];
+										$query = "SELECT course.courseId, course.courseName FROM course
+										INNER JOIN student_course
+										on course.courseId = student_course.courseId
+										WHERE student_course.studentId = '$userId'";
+										$result = mysqli_query($con, $query);
+										while ($row = mysqli_fetch_array($result)) {
+											?>
+											<option value="<?php echo $row["courseId"]; ?>">
+												<?php echo $row["courseName"]; ?>
+											</option>
+										<?php
+									} ?>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<!-- go to last script tag for form submit understanding -->
+									<button id="give" class="btn btn-success">Get Questions</button>
+									<button type="reset" class="btn">Reset</button>
+								</div>
+
+							</div>
 
 
-	<!-- Bottom scripts (common) -->
-	<script src="../assets/js/gsap/TweenMax.min.js"></script>
-	<script src="../assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
-	<script src="../assets/js/bootstrap.js"></script>
-	<script src="../assets/js/joinable.js"></script>
-	<script src="../assets/js/resizeable.js"></script>
-	<script src="../assets/js/neon-api.js"></script>
+							<script>
+								$("#give").click(function() {
+									if ($("#courseId").val() != "")
+										$("#courseSel").hide();
+								});
+							</script>
 
 
-	<!-- JavaScripts initializations and stuff -->
-	<script src="../assets/js/neon-custom.js"></script>
+						</div>
 
-
-	<!-- Demo Settings -->
-	<script src="../assets/js/neon-demo.js"></script>
-    <script src="js/jquery-1.9.1.min.js"></script>
-<script src="js/watch.js"></script>
-
-<script>
-
-errorPlacement : function(error, element) {
-						$(element).closest('.form-group').find('.help-block').html(error.html());
-					},
-					highlight : function(element) {
-						$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-					},
-                    
-success : function(element, lab) {
-						var messages = new Array("That's Great!", "Looks good!", "You got it!", "Great Job!", "Smart!", "That's it!");
-						var num = Math.floor(Math.random() * 6);
-						$(lab).closest('.form-group').find('.help-block').text(messages[num]);
-						$(lab).addClass('valid').closest('.form-group').removeClass('has-error').addClass('has-success');
-					}
+					</div>
+				</div>
+			</div>
 
 
 
-</script>
+
+		</div>
+
+
+
+
+		<!-- Bottom scripts (common) -->
+		<script src="../assets/js/gsap/TweenMax.min.js"></script>
+		<script src="../assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+		<script src="../assets/js/bootstrap.js"></script>
+		<script src="../assets/js/joinable.js"></script>
+		<script src="../assets/js/resizeable.js"></script>
+		<script src="../assets/js/neon-api.js"></script>
+
+
+		<!-- JavaScripts initializations and stuff -->
+		<script src="../assets/js/neon-custom.js"></script>
+		<script src="../assets/js/jquery.validate.min.js"></script>
+
+
+		<!-- Demo Settings -->
+		<script src="../assets/js/neon-demo.js"></script>
+		<script src="../assets/js/toastr.js"></script>
+
 
 </body>
+
 </html>

@@ -14,7 +14,7 @@ require('../scripts/db.php');
 
     <link rel="icon" href="../assets/images/favicon.ico">
 
-    <title>Neon | Add Course</title>
+    <title>Online Classroom | Videos</title>
 
     <link rel="stylesheet" href="../assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
     <link rel="stylesheet" href="../assets/css/font-icons/entypo/css/entypo.css">
@@ -53,169 +53,198 @@ require('../scripts/db.php');
                 <li>
                     <a href="index.html"><i class="fa-home"></i>Home</a>
                 </li>
-                <li>
-                    <a href="#">Videos</a>
-                </li>
                 <li class="active">
-                    <strong>Add video</strong>
+                    <strong>Videos</strong>
                 </li>
             </ol>
-            <h1>Add Videos</h1>
+            <h1>Videos</h1>
             <br>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="panel panel-primary" data-collapsed="0">
+                    <div class="panel-group joined" id="accordion-test-2">
 
-                        <!-- panel body -->
-                        <div class="panel-body">
-                            <form role="form" id="form5" method="post" class="validate" enctype="multipart/form-data">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion-test-2" href="#collapseTwo-2" class="collapsed">
+                                        Add Video
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo-2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <form action="../scripts/addvideosscript.php" role="form" id="form6" enctype="multipart/form-data" method="post" class="validate" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label class="control-label">Video Name</label>
 
+                                            <input type="text" id="name" name="name" class="form-control" placeholder="Video Name" />
+                                        </div>
 
-                                <div class="form-group">
-                                    <label class="control-label">Select Course:</label>
-                                    <select name="courseId" id="inputCourse" class="form-control">
-                                        <?php
-                                        $query = "SELECT * FROM course";
-                                        $result2 = mysqli_query($con, $query);
-                                        while ($row = mysqli_fetch_array($result2)) {
+                                        <div class="form-group">
+                                            <label class="control-label">Select Course:</label>
+                                            <select name="courseId" id="courseId" class="form-control">
+                                                <?php
+                                                $query = "SELECT * FROM course";
+                                                $result2 = mysqli_query($con, $query);
+                                                while ($row = mysqli_fetch_array($result2)) {
+                                                    ?>
+                                                    <option value="<?php echo $row["courseId"]; ?>"><?php echo $row["courseName"]; ?></option>
+                                                <?php
+                                            }
                                             ?>
-                                        <option value="<?php echo $row["courseId"]; ?>"><?php echo $row["courseName"]; ?></option>
-                                        <?php 
-                                    }
-                                    ?>
-                                    </select>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">Upload Video (.mp4)</label>
+
+                                            <input type="file" name="fileToUpload" id="fileToUpload" accept="video/*">
+                                        </div>
+                                        <div class="form-group">
+                                            <!-- go to last script tag for form submit understanding -->
+                                            <button type="submit" id="submit" class="btn btn-success">Submit</button>
+                                            <button type="reset" class="btn">Reset</button>
+                                        </div>
+
+                                    </form>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label">Upload Video</label>
-
-                                    <input type="file" name="video" accept="video/*">
-                                </div>
-                                <div class="form-group">
-                                    <!-- go to last script tag for form submit understanding -->
-                                    <button type="submit" id="submit" class="btn btn-success">Submit</button>
-                                    <button type="reset" class="btn">Reset</button>
-                                </div>
-
-                            </form>
-
-
+                            </div>
                         </div>
 
+                        <div class="panel panel-primary" data-collapsed="0">
+
+                        
+                            <div class="panel-body">
+
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+
+
+
+
             </div>
 
 
 
 
-        </div>
+            <!-- Bottom scripts (common) -->
+            <script src="../assets/js/gsap/TweenMax.min.js"></script>
+            <script src="../assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+            <script src="../assets/js/bootstrap.js"></script>
+            <script src="../assets/js/joinable.js"></script>
+            <script src="../assets/js/resizeable.js"></script>
+            <script src="../assets/js/neon-api.js"></script>
 
 
+            <!-- JavaScripts initializations and stuff -->
+            <script src="../assets/js/neon-custom.js"></script>
+            <script src="../assets/js/jquery.validate.min.js"></script>
 
 
-        <!-- Bottom scripts (common) -->
-        <script src="../assets/js/gsap/TweenMax.min.js"></script>
-        <script src="../assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
-        <script src="../assets/js/bootstrap.js"></script>
-        <script src="../assets/js/joinable.js"></script>
-        <script src="../assets/js/resizeable.js"></script>
-        <script src="../assets/js/neon-api.js"></script>
+            <!-- Demo Settings -->
+            <script src="../assets/js/neon-demo.js"></script>
+            <script src="../assets/js/toastr.js"></script>
+            <!-- <script>
+                //form id #form1, call validation of form
+                $("#form6").validate({
+                    //setup rules for validation
+                    rules: {
+                        //element id courseName
+                        name: {
+                            //validation property
+                            required: true,
 
-
-        <!-- JavaScripts initializations and stuff -->
-        <script src="../assets/js/neon-custom.js"></script>
-        <script src="../assets/js/jquery.validate.min.js"></script>
-
-
-        <!-- Demo Settings -->
-        <script src="../assets/js/neon-demo.js"></script>
-        <script src="../assets/js/toastr.js"></script>
-        <script>
-            //form id #form1, call validation of form
-            $("#form5").validate({
-                //setup rules for validation
-                rules: {
-                    //element id courseName
-                    courseName: {
-                        //validation property
-                        required: true,
-                        minlength: 3,
-                        maxlength: 20
-                    },
-                    courseType: {
-                        required: true
-                    }
-                },
-                //display error messages
-                messages: {
-                    //element id courseName
-                    courseName: {
-                        //validation property and message value
-                        required: 'Required Field',
-                        minlength: 'Required atleast 3 characters',
-                        maxlength: 'Required atmost 20 characters'
-                    },
-                    courseType: {
-                        required: 'Select Type of Course...'
-                    },
-                },
-                //Call Element Validation on focus out from element
-                onfocusout: function(element) {
-                    this.element(element);
-                },
-                //Call Form Validation on Submit
-                submitHandler: function(form) {
-                    show_loading_bar(20);
-
-                    var submitted_courseName = $("#courseName").val(),
-                        submitted_courseType = $("#courseType").val();
-
-
-                    $.ajax({
-                        url: "../scripts/addvideosscript.php", // Your php script to wait for login connections and set login sessions
-                        type: "POST",
-                        // You can access the user and pass with $_POST['username'] and $_POST['password']
-                        data: {
-                            CourseName: submitted_courseName, //$_POST['CourseName']
-                            CourseType: submitted_courseType
                         },
+                        courseId: {
+                            //validation property
+                            required: true,
 
-                        success: function(response_text) // response_text - is what you output based on user login information, lets suggest you output numbers i.e. 1 means logged in, 2 password incorred, 3 any other reason...
-                        {
-                            show_loading_bar(65);
-                            if (response_text == 1) {
-                                show_loading_bar({
-                                    pct: 100,
-                                    finish: function(pct) {
-                                        toastr.info("Course Inserted Successfully");
-                                        hide_loading_bar();
-                                    }
-                                });
-                            } else if (response_text == 2) {
-                                show_loading_bar({
-                                    pct: 100,
-                                    finish: function(pct) {
-                                        toastr.info("Course Updated Successfully");
-                                        hide_loading_bar();
-                                    }
-                                });
-                            } else {
-                                show_loading_bar({
-                                    pct: 65,
-                                    finish: function(pct) {
-                                        toastr.info("Some Error Occured");
-                                        hide_loading_bar();
-                                    }
-                                });
-                            }
-                            document.getElementById("form5").reset();
+                        },
+                        video: {
+                            required: true
                         }
-                    });
-                    return false;
-                }
-            });
-        </script>
+                    },
+                    //display error messages
+                    messages: {
+                        //element id courseName
+                        name: {
+                            //validation property and message value
+                            required: 'Required Field',
+
+                        },
+                        courseId: {
+                            //validation property and message value
+                            required: 'Required Field',
+
+                        },
+                        video: {
+                            required: 'Select File..'
+                        },
+                    },
+                    //Call Element Validation on focus out from element
+                    onfocusout: function(element) {
+                        this.element(element);
+                    },
+                    //Call Form Validation on Submit
+                    submitHandler: function(form) {
+                        show_loading_bar(20);
+                        var file_data = $('#classnotes').prop('files')[0];
+                        var form_data = new FormData($("#form6")[0]);
+                        // form_data.append('file', file_data);
+
+
+                        $.ajax({
+                            url: "../scripts/addvideosscript.php", // Your php script to wait for login connections and set login sessions
+                            type: "POST",
+                            enctype: 'multipart/form-data',
+                            // You can access the user and pass with $_POST['username'] and $_POST['password']
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            data: form_data,
+                            success: function(response_text) // response_text - is what you output based on user login information, lets suggest you output numbers i.e. 1 means logged in, 2 password incorred, 3 any other reason...
+                            {
+
+                                show_loading_bar(65);
+                                if (response_text == 1) {
+                                    show_loading_bar({
+                                        pct: 100,
+                                        finish: function(pct) {
+                                            toastr.info("Video Inserted Successfully");
+                                            hide_loading_bar();
+                                        }
+                                    });
+                                } else if (response_text == 2) {
+                                    show_loading_bar({
+                                        pct: 100,
+                                        finish: function(pct) {
+                                            toastr.info("Course Updated Successfully");
+                                            hide_loading_bar();
+                                        }
+                                    });
+                                } else {
+                                    show_loading_bar({
+                                        pct: 65,
+                                        finish: function(pct) {
+                                            toastr.info("Some Error Occured");
+                                            hide_loading_bar();
+                                        }
+                                    });
+                                }
+                                document.getElementById("form6").reset();
+                            },
+                            error: function(response) {
+                                toastr.info(response); // display error response from the PHP script
+                            }
+                        });
+                        return false;
+                    }
+                });
+            </script> -->
 
 </body>
 
-</html> 
+</html>
