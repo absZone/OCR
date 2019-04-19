@@ -19,7 +19,7 @@ if ($_SESSION['type'] == 'student') { } else if ($_SESSION['type'] == 'faculty')
 
 	<link rel="icon" href="../assets/images/favicon.ico">
 
-	<title>Neon | Give Exam</title>
+	<title>ONLINE CLASSROOM | Give Exam</title>
 
 	<link rel="stylesheet" href="../assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="../assets/css/font-icons/entypo/css/entypo.css">

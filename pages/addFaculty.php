@@ -23,7 +23,7 @@ else {
 
     <link rel="icon" href="../assets/images/favicon.ico">
 
-    <title>Neon | Add Faculty</title>
+    <title>ONLINE CLASSROOM | Add Faculty</title>
 
     <link rel="stylesheet" href="../assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
     <link rel="stylesheet" href="../assets/css/font-icons/entypo/css/entypo.css">
