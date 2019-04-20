@@ -132,7 +132,7 @@ if ($_SESSION['type'] == 'student') {
 				<ul>
 					<?php if ($admin || $faculty) { ?>
 						<li>
-							<a href="questionPaper.php">
+							<a href="quesPaper.php">
 								<span class="title">Add Question & Answers</span>
 							</a>
 						</li>
