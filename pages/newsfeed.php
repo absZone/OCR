@@ -14,11 +14,9 @@ require('../scripts/db.php');
 
     <link rel="icon" href="../assets/images/favicon.ico">
 
-<<<<<<< HEAD
-    <title>ONLINE CLASSROOM | Add Course</title>
-=======
+
     <title>Online Classroom | Newsfeed</title>
->>>>>>> f34fa6dd4b3fd480baac354494a315e7bf7aeb71
+
 
     <link rel="stylesheet" href="../assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
     <link rel="stylesheet" href="../assets/css/font-icons/entypo/css/entypo.css">

@@ -147,7 +147,7 @@ if ($_SESSION['type'] == 'student') {
 				</ul>
 			</li>
 			<li>
-				<a href="index.html">
+				<a href="result.php">
 					<i class="entypo-docs"></i>
 					<span class="title">Result</span>
 				</a>
