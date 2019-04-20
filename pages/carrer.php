@@ -51,7 +51,7 @@ require('../scripts/db.php');
 
             <ol class="breadcrumb bc-3">
                 <li>
-                    <a href="#"><i class="fa-home"></i>Home</a>
+                    <a href="dashboard.php"><i class="fa-home"></i>Home</a>
                 </li>
                 <li>
                     <a href="#">Carrer</a>

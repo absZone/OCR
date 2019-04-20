@@ -61,7 +61,7 @@ if (isset($_POST["courseId"])) {
 
 			<ol class="breadcrumb bc-3">
 				<li>
-					<a href="index.html"><i class="fa-home"></i>Home</a>
+					<a href="dashboard.php"><i class="fa-home"></i>Home</a>
 				</li>
 				<li>
 					<a href="viewCourse.php">Exams</a>

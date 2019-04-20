@@ -66,10 +66,10 @@ else {
 
             <ol class="breadcrumb bc-3">
                 <li>
-                    <a href="index.html"><i class="fa-home"></i>Home</a>
+                    <a href="dashboard.php"><i class="fa-home"></i>Home</a>
                 </li>
                 <li class="active">
-                    <a href="ui-panels.html">Courses</a>
+                    <a href="viewCourse.php">Courses</a>
                 </li>
             </ol>
             <h1>View All Course</h1>

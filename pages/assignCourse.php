@@ -57,10 +57,10 @@ else {
 		
 <ol class="breadcrumb bc-3" >
     <li>
-        <a href="index.html"><i class="fa-home"></i>Home</a>
+        <a href="dashboard.php"><i class="fa-home"></i>Home</a>
     </li>
     <li>
-        <a href="ui-panels.html">Course</a>
+        <a href="viewCourse.php">Course</a>
     </li>
     <li class="active">
         <strong>Add</strong>
