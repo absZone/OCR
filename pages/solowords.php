@@ -1,5 +1,6 @@
 <?php session_start();
 require('../scripts/db.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,11 +15,7 @@ require('../scripts/db.php');
 
     <link rel="icon" href="../assets/images/favicon.ico">
 
-<<<<<<< HEAD
-    <title>ONLINE CLASSROOM | Add Course</title>
-=======
-    <title>Online Classroom | Newsfeed</title>
->>>>>>> f34fa6dd4b3fd480baac354494a315e7bf7aeb71
+    <title>Online Classroom | Games</title>
 
     <link rel="stylesheet" href="../assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
     <link rel="stylesheet" href="../assets/css/font-icons/entypo/css/entypo.css">
@@ -58,14 +55,14 @@ require('../scripts/db.php');
                     <a href="#"><i class="fa-home"></i>Home</a>
                 </li>
                 <li>
-                    <a href="#">Newsfeed</a>
+                    <a href="#">GAMES</a>
                 </li>
                 
             </ol>
-            <h1>Newsfeed</h1>
+            <h1>SOLO WORDS</h1>
             <br>
-            
-
+            <div><a href='http://www.willinggames.com/puzzle-games/Solo-Words.html' style='color:#2e4b82;'><img src='http://www.willinggames.com/gamespic/Solo-Words.jpg' width='50' height='50' align='left' style='float:left; border:2px solid #006; margin-right:5px;'><b style='display:block;padding-top:18px;'>Solo Words</b></a><br clear='all'></div>
+            <embed src='http://www.willinggames.com/flash/Solo-Words.swf' type='application/x-shockwave-flash' width='640' height='480'><embed/><br><a href='http://www.willinggames.com' target='_blank' title='Small Flash Games'>Play Free Flash Games at WillingGames</a>
 </body>
 
 </html> 
