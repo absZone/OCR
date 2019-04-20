@@ -95,7 +95,7 @@ else {
                                 </div>
                                 <hr />
                                 <div class="form-group">
-                                    <input type="text" placeholder="Question " name="question" class="form-control" required>
+                                    <input type="text" placeholder="Question " id="question" name="question" class="form-control" required>
                                 </div>
                                 <div class="col-md-12">
                                 <div class="col-md-1">
@@ -104,7 +104,7 @@ else {
                                 </div>
                                     <div class="col-md-6">
                                 
-                                    <input type="text" placeholder="Option 1" name="optionOne" class="form-control" required>
+                                    <input type="text" placeholder="Option 1" id="optionOne" name="optionOne" class="form-control" required>
                                 
                                 </div>
                                 </div>
@@ -115,7 +115,7 @@ else {
 
 
                                 <div class="col-md-6">
-                                    <input type="text" placeholder="Option 2" name="optionTwo" class="form-control" required>
+                                    <input type="text" placeholder="Option 2" id="optionTwo" name="optionTwo" class="form-control" required>
                                 </div>
                                 </div>
                                 <div class="col-md-12">
@@ -125,7 +125,7 @@ else {
                                
                                
                                 <div class="col-md-6">
-                                    <input type="text" placeholder="Option 3" name="optionThree" class="form-control" required>
+                                    <input type="text" placeholder="Option 3" id="optionThree" name="optionThree" class="form-control" required>
                                 </div>
                                 </div>
 
@@ -135,7 +135,7 @@ else {
                                 </div>
                                 
                                 <div class="col-md-6">
-                                    <input type="text" placeholder="Option 4" name="optionFour" class="form-control" required>
+                                    <input type="text" placeholder="Option 4" id="optionFour" name="optionFour" class="form-control" required>
                                 </div>
                                 </div>
                                 
@@ -217,17 +217,26 @@ else {
                 submitHandler: function(form) {
                     show_loading_bar(20);
 
-                    var submitted_courseName = $("#courseName").val(),
-                        submitted_courseType = $("#courseType").val();
+                    var submitted_question = $("#question").val(),
+                        submitted_optionOne = $("#optionOne").val();
+                        submitted_optionTwo = $("#optionTwo").val();
+                        submitted_optionThree = $("#optionThree").val();
+                        submitted_optionFour = $("#optionFour").val();
+                        submitted_radio = $("input:radio[name=radio] :selected").val();
+
 
 
                     $.ajax({
-                        url: "../scripts/addcoursescript.php", // Your php script to wait for login connections and set login sessions
+                        url: "../scripts/questionPaperscript.php", // Your php script to wait for login connections and set login sessions
                         type: "POST",
                         // You can access the user and pass with $_POST['username'] and $_POST['password']
                         data: {
-                            CourseName: submitted_courseName,
-                            CourseType: submitted_courseType
+                            question: submitted_question,
+                            optionOne: submitted_optionOne
+                            optionTwo: submitted_optionTwo
+                            optionThree: submitted_optionThree
+                            optionFour: submitted_optionFour
+                            correctAns:submitted_radio
                         },
 
                         success: function(response_text) // response_text - is what you output based on user login information, lets suggest you output numbers i.e. 1 means logged in, 2 password incorred, 3 any other reason...
@@ -237,7 +246,7 @@ else {
                                 show_loading_bar({
                                     pct: 100,
                                     finish: function(pct) {
-                                        toastr.info("Course Inserted Successfully");
+                                        toastr.info("Question Inserted Successfully");
                                         hide_loading_bar();
                                     }
                                 });
@@ -245,7 +254,7 @@ else {
                                 show_loading_bar({
                                     pct: 100,
                                     finish: function(pct) {
-                                        toastr.info("Course Updated Successfully");
+                                        toastr.info("Question Updated Successfully");
                                         hide_loading_bar();
                                     }
                                 });
@@ -258,7 +267,7 @@ else {
                                     }
                                 });
                             }
-                            document.getElementById("form1").reset();
+                            document.getElementById("form4").reset();
                         }
                     });
                     return false;
