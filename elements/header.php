@@ -117,7 +117,7 @@ if ($_SESSION['type'] == 'student') {
 							</li>
 						<?php } ?>
 						<li>
-							<a href="layout-collapsed-sidebar.html">
+							<a href="viewStudent.php">
 								<span class="title">View Students</span>
 							</a>
 						</li>
