@@ -76,13 +76,7 @@ if ($_SESSION['type'] == 'student') {
 								</a>
 							</li>
 						<?php } ?>
-						<?php if ($admin) { ?>
-							<li>
-								<a href="../pages/assignCourse.php">
-									<span class="title">Assign Course</span>
-								</a>
-							</li>
-						<?php } ?>
+						
 						<?php if ($admin) { ?>
 							<li>
 								<a href="search.php">
