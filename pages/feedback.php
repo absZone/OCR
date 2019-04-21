@@ -66,7 +66,7 @@ require('../scripts/db.php');
             <div class="panel panel-default">
 
   <div class="panel-body">
-  	<form method="post">
+  	<form method="post" id="formf">
   	  <div class="form-group">
 	    <label for="exampleInputEmail1">Name</label>
 	    <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Name">
@@ -79,7 +79,7 @@ require('../scripts/db.php');
 	    <label for="exampleInputPassword1">Give Your Feedback</label>
 	    <textarea name="subject" class="form-control" rows="3"></textarea>
 	  </div>
-	  <button type="submit" class="btn btn-primary">Submit</button>
+	  <button type="submit" class="btn btn-primary" onClick="setTimeout('clearform()', 1500 );">Submit</button>
 	</form>
   </div>
 </div>
@@ -93,14 +93,16 @@ if(isset($_POST) & !empty($_POST)){
 	$isql = "INSERT INTO comments (name, email, subject, status) VALUES ('$name', '$email', '$subject', 'draft')";
 	$ires = mysqli_query($con, $isql) or die(mysqli_error($con));
 	if($ires){
-		$smsg = "Your Comment Submitted Successfully";
+    $smsg = "Your Comment Submitted Successfully";
+    echo $smsg;
 	}else{
-		$fmsg = "Failed to Submit Your Comment";
+    $fmsg = "Failed to Submit Your Comment";
+    echo $fmsg;
 	}
 
 }
 ?>
-
+ 
 </body>
 
 </html> 
