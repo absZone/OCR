@@ -274,7 +274,7 @@ if ($_SESSION['type'] == 'student') {
 				<li>
 					<a href="feedback.php">
 						<i class="entypo-direction"></i>
-						<span class="title">feedback</span>
+						<span class="title">Feedback</span>
 					</a>
 				</li>
 			<?php } ?>
