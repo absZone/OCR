@@ -11,7 +11,7 @@ if(isset($_SESSION['key'])) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Admin Login</title>
+        <title>Faculty Login</title>
 
         <!-- Bootstrap CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@ if(isset($_SESSION['key'])) {
 	</div>
 	
 	<div class="inputGroup inputGroup1">
-		<label for="loginEmail" id="loginEmailLabel">Email</label>
+		<label for="loginEmail" id="loginEmailLabel">Login Name</label>
 		<input type="text" name="loginEmail" id="loginEmail" maxlength="254" />
 		<p class="helper helper1">Login Id</p>
 	</div>

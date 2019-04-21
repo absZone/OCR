@@ -144,7 +144,7 @@ if(isset($_SESSION['key'])) {
 	</div>
 	<div class="inputGroup inputGroup2">
 		<label for="loginPassword" id="loginPasswordLabel">Password</label>
-		<input type="password" name="loginPassword" id="loginPassword" />
+		<input type="password" name="Password" id="Password" />
 		<label id="showPasswordToggle" for="showPasswordCheck">Show
 			<input id="showPasswordCheck" type="checkbox"/>
 			<div class="indicator"></div>

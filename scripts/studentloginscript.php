@@ -2,7 +2,7 @@
 require('db.php');
 
 $loginId=mysqli_real_escape_string($con,$_POST['loginEmail']);
-$password=mysqli_real_escape_string($con,$_POST['Password']);
+$password=mysqli_real_escape_string($con,$_POST['loginPassword']);
 $encryptPassword=md5($password);
 $loginQuery="select * from student WHERE loginId='$loginId' and password='$encryptPassword'";
 $result=mysqli_query($con,$loginQuery);
