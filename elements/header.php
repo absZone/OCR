@@ -55,53 +55,69 @@ if ($_SESSION['type'] == 'student') {
 					<span class="title">Dashboard</span>
 				</a>
 			</li>
-			<li class="has-sub">
-				<a href="">
-					<i class="entypo-layout"></i>
-					<span class="title">Course</span>
-				</a>
-				<ul>
-					<?php if ($admin) { ?>
-						<li>
-							<a href="../pages/addCourse.php">
-								<span class="title">Add Course</span>
-							</a>
-						</li>
-					<?php } ?>
-					<li>
-						<a href="../pages/viewCourse.php">
-							<span class="title">View Course</span>
-						</a>
-					</li>
-					<?php if ($admin) { ?>
-						<li>
-							<a href="../pages/assignCourse.php">
-								<span class="title">Assign Course</span>
-							</a>
-						</li>
-					<?php } ?>
-				</ul>
-			</li>
-			<li class="has-sub">
-				<a href="layout-api.html">
-					<i class="entypo-users"></i>
-					<span class="title">Faculties</span>
-				</a>
-				<ul>
-					<?php if ($admin) { ?>
-						<li>
-							<a href="../pages/addFaculty.php">
-								<span class="title">Add Faculty</span>
-							</a>
-						</li>
-					<?php } ?>
-					<li>
-						<a href="viewFaculty.php">
-							<span class="title">View Faculty</span>
-						</a>
-					</li>
-				</ul>
-			</li>
+			<?php if ($admin) { ?>
+				<li class="has-sub">
+					<a href="">
+						<i class="entypo-layout"></i>
+						<span class="title">Course</span>
+					</a>
+					<ul>
+						<?php if ($admin) { ?>
+							<li>
+								<a href="../pages/addCourse.php">
+									<span class="title">Add Course</span>
+								</a>
+							</li>
+						<?php } ?>
+						<?php if ($student || $admin) { ?>
+							<li>
+								<a href="../pages/viewCourse.php">
+									<span class="title">View Course</span>
+								</a>
+							</li>
+						<?php } ?>
+						<?php if ($admin) { ?>
+							<li>
+								<a href="../pages/assignCourse.php">
+									<span class="title">Assign Course</span>
+								</a>
+							</li>
+						<?php } ?>
+						<?php if ($admin) { ?>
+							<li>
+								<a href="search.php">
+									<i class="entypo-search"></i>
+									<span class="title">Search Course</span>
+								</a>
+							</li>
+						<?php } ?>
+					</ul>
+				</li>
+			<?php } ?>
+			<?php if ($admin || $student) { ?>
+				<li class="has-sub">
+					<a href="layout-api.html">
+						<i class="entypo-users"></i>
+						<span class="title">Faculties</span>
+					</a>
+					<ul>
+						<?php if ($admin) { ?>
+							<li>
+								<a href="../pages/addFaculty.php">
+									<span class="title">Add Faculty</span>
+								</a>
+							</li>
+						<?php } ?>
+						<?php if ($admin || $student) { ?>
+							<li>
+								<a href="viewFaculty.php">
+									<span class="title">View Faculty</span>
+								</a>
+							</li>
+						<?php } ?>
+					</ul>
+				</li>
+			<?php } ?>
 			<?php if ($admin || $faculty) { ?>
 				<li class="has-sub">
 					<a href="layout-api.html">
@@ -116,11 +132,13 @@ if ($_SESSION['type'] == 'student') {
 								</a>
 							</li>
 						<?php } ?>
-						<li>
-							<a href="viewStudent.php">
-								<span class="title">View Students</span>
-							</a>
-						</li>
+						<?php if ($admin || $faculty) { ?>
+							<li>
+								<a href="viewStudent.php">
+									<span class="title">View Students</span>
+								</a>
+							</li>
+						<?php } ?>
 					</ul>
 				</li>
 			<?php } ?>
@@ -146,96 +164,129 @@ if ($_SESSION['type'] == 'student') {
 					<?php } ?>
 				</ul>
 			</li>
-			<li>
-				<a href="result.php">
-					<i class="entypo-docs"></i>
-					<span class="title">Result</span>
-				</a>
-			</li>
-			<li>
-				<a href="addvideos.php">
-					<i class="entypo-play"></i>
-					<span class="title">Videos</span>
-				</a>
-			</li>
-			<li>
-				<a href="addbooks.php">
-					<i class="entypo-book"></i>
-					<span class="title">Books</span>
-				</a>
-			</li>
-			<li>
-				<a href="counselling.php">
-					<i class="entypo-direction"></i>
-					<span class="title">Counselling</span>
-				</a>
-			</li>
+			<?php if ($student) { ?>
+				<li>
+					<a href="result.php">
+						<i class="entypo-docs"></i>
+						<span class="title">Result</span>
+					</a>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $student) { ?>
+				<li>
+					<a href="addvideos.php">
+						<i class="entypo-play"></i>
+						<span class="title">Videos</span>
+					</a>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $student) { ?>
+				<li>
+					<a href="addbooks.php">
+						<i class="entypo-book"></i>
+						<span class="title">Books</span>
+					</a>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $student) { ?>
+				<li>
+					<a href="counselling.php">
+						<i class="entypo-direction"></i>
+						<span class="title">Counselling</span>
+					</a>
+				</li>
+			<?php } ?>
 
-			<li>
-				<a href="certificate.php">
-					<i class="entypo-flag"></i>
-					<span class="title">Certification</span>
-				</a>
-			</li>
-			<li>
-				<a href="newsfeed.php">
-					<i class="entypo-newspaper"></i>
-					<span class="title">Newsfeed</span>
-				</a>
-			</li>
-			<li>
-				<a href="index.html">
-					<i class="entypo-docs"></i>
-					<span class="title">Mediakit</span>
-				</a>
-			</li>
-			<li>
-				<a href="carrer.php">
-					<i class="entypo-direction"></i>
-					<span class="title">Carrer</span>
-				</a>
-			</li>
-			<li class="has-sub">
-				<a href="layout-api.html">
-					<i class="entypo-flag"></i>
-					<span class="title">Games</span>
-				</a>
-				<ul>
+			<?php if ($student) { ?>
+				<li>
+					<a href="certificate.php">
+						<i class="entypo-flag"></i>
+						<span class="title">Certification</span>
+					</a>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $admin) { ?>
+				<li>
+					<a href="mediakit.php">
+						<i class="entypo-direction"></i>
+						<span class="title">Mediakit</span>
+					</a>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $student) { ?>
+				<li>
+					<a href="viewmediakit.php">
+						<i class="entypo-direction"></i>
+						<span class="title">View mediakit</span>
+					</a>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $admin) { ?>
+				<li>
+					<a href="notice.php">
+						<i class="entypo-doc-text"></i>
+						<span class="title">Notice</span>
+					</a>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $student) { ?>
+				<li>
+					<a href="viewnotice.php">
+						<i class="entypo-doc-text"></i>
+						<span class="title">View Notices</span>
+					</a>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $student) { ?>
+				<li>
+					<a href="carrer.php">
+						<i class="entypo-direction"></i>
+						<span class="title">Carrer</span>
+					</a>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $student) { ?>
+				<li class="has-sub">
+					<a href="layout-api.html">
+						<i class="entypo-flag"></i>
+						<span class="title">Logic Games</span>
+					</a>
+					<ul>
 
-					<li>
-						<a href="solowords.php">
-							<span class="title">solo words</span>
-						</a>
-					</li>
+						<li>
+							<a href="solowords.php">
+								<span class="title">solo words</span>
+							</a>
+						</li>
 
 
-					<li>
-						<a href="rombh.php">
-							<span class="title">rombh</span>
-						</a>
-					</li>
+						<li>
+							<a href="rombh.php">
+								<span class="title">rombh</span>
+							</a>
+						</li>
 
-				</ul>
+					</ul>
 
-			<li>
-				<a href="search.php">
-					<i class="entypo-direction"></i>
-					<span class="title">search</span>
-				</a>
-			</li>
-			<li>
-				<a href="feedback.php">
-					<i class="entypo-direction"></i>
-					<span class="title">feedback</span>
-				</a>
-			</li>
-			<li>
-				<a href="viewfeedback.php">
-					<i class="entypo-direction"></i>
-					<span class="title">View feedback</span>
-				</a>
-			</li>
-			</li>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $student) { ?>
+				<li>
+					<a href="feedback.php">
+						<i class="entypo-direction"></i>
+						<span class="title">feedback</span>
+					</a>
+				</li>
+			<?php } ?>
+			<?php if ($faculty || $admin) { ?>
+				<li>
+					<a href="viewfeedback.php">
+						<i class="entypo-direction"></i>
+						<span class="title">View feedback</span>
+					</a>
+				</li>
+			<?php } ?>
+
 		</ul>
 
 	</div>

@@ -66,7 +66,7 @@ require('../scripts/db.php');?>
 					<div class="num" data-start="0" data-end="<?php echo $count; ?>" data-postfix="" data-duration="1500" data-delay="0">0</div>
 		
 					<h3>Registered Students</h3>
-					<p>so far in our blog, and our website.</p>
+					
 				</div>
 		
 			</div>
@@ -87,7 +87,7 @@ require('../scripts/db.php');?>
 					<div class="num" data-start="0" data-end="<?php echo $q ?>" data-postfix="" data-duration="1500" data-delay="600">0</div>
 		
 					<h3>Faculties</h3>
-					<p>this is the average value.</p>
+					
 				</div>
 		
 			</div>
@@ -110,7 +110,7 @@ require('../scripts/db.php');?>
 					<div class="num" data-start="0" data-end="<?php echo $i; ?>" data-postfix="" data-duration="1500" data-delay="1200">0</div>
 		
 					<h3>Courses</h3>
-					<p>messages per day.</p>
+					
 				</div>
 		
 			</div>
