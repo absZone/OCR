@@ -97,7 +97,7 @@ else {
                                         $query = "Select faculty.facultyId, faculty.firstName, faculty.course from faculty";
                                     } else {
                                         $user = $_SESSION['key'];
-                                        $query = "Select course.courseName, course_type.courseType from student_course Inner Join course on student_course.courseId = course.courseId Inner Join course_type on course.courseTypeId = course_type.courseTypeId where student_course.studentId = '$user' ";
+                                        $query = "Select faculty.facultyId, faculty.firstName, faculty.course from faculty";
                                     }
 									
 									$result = mysqli_query($con, $query);
