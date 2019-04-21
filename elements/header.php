@@ -208,17 +208,36 @@ if ($_SESSION['type'] == 'student') {
 						</a>
 					</li>
 
-					
-						<li>
-							<a href="rombh.php">
-								<span class="title">rombh</span>
-							</a>
-						</li>
 
-					</ul>
-				</li>
-			</ul>
+					<li>
+						<a href="rombh.php">
+							<span class="title">rombh</span>
+						</a>
+					</li>
 
-		</div>
+				</ul>
+
+			<li>
+				<a href="search.php">
+					<i class="entypo-direction"></i>
+					<span class="title">search</span>
+				</a>
+			</li>
+			<li>
+				<a href="feedback.php">
+					<i class="entypo-direction"></i>
+					<span class="title">feedback</span>
+				</a>
+			</li>
+			<li>
+				<a href="viewfeedback.php">
+					<i class="entypo-direction"></i>
+					<span class="title">View feedback</span>
+				</a>
+			</li>
+			</li>
+		</ul>
+
+	</div>
 
 </div>
