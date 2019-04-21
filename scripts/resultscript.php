@@ -1,5 +1,15 @@
 <?php session_start();
 require('../scripts/db.php');
+if ($_SESSION['type'] == 'student') { } else if ($_SESSION['type'] == 'faculty') {
+	header("Location:dashboard.php");
+} else {
+	header("Location:dashboard.php");
+}
+if (isset($_POST["courseId"])) {
+	$courseId = $_POST["courseId"];
+} else {
+	header("Location:result.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
