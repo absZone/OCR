@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require('../scripts/db.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +54,16 @@
 		
 				<div class="tile-stats tile-red">
 					<div class="icon"><i class="entypo-users"></i></div>
-					<div class="num" data-start="0" data-end="83" data-postfix="" data-duration="1500" data-delay="0">0</div>
+					<?php
+										$query = "SELECT * FROM student";
+										$result2 = mysqli_query($con, $query);
+										$q=0;
+										while ($row = mysqli_fetch_array($result2)) {
+											$q++;
+										}
+										$count=$q;
+                            ?>
+					<div class="num" data-start="0" data-end="<? php echo $count; ?>" data-postfix="" data-duration="1500" data-delay="0">0</div>
 		
 					<h3>Registered Students</h3>
 					<p>so far in our blog, and our website.</p>
@@ -65,7 +75,16 @@
 		
 				<div class="tile-stats tile-green">
 					<div class="icon"><i class="entypo-chart-bar"></i></div>
-					<div class="num" data-start="0" data-end="135" data-postfix="" data-duration="1500" data-delay="600">0</div>
+					<?php
+										$query = "SELECT * FROM faculty";
+										$result2 = mysqli_query($con, $query);
+										$q=0;
+										while ($row = mysqli_fetch_array($result2)) {
+											$q++;
+										}
+										$count=$q;
+                            ?>
+					<div class="num" data-start="0" data-end="<? php echo $i; ?>" data-postfix="" data-duration="1500" data-delay="600">0</div>
 		
 					<h3>Faculties</h3>
 					<p>this is the average value.</p>
@@ -79,7 +98,16 @@
 		
 				<div class="tile-stats tile-aqua">
 					<div class="icon"><i class="entypo-mail"></i></div>
-					<div class="num" data-start="0" data-end="23" data-postfix="" data-duration="1500" data-delay="1200">0</div>
+					
+                                        <?php
+										$query = "SELECT * FROM course";
+										$result2 = mysqli_query($con, $query);
+										$i=0;
+										while ($row = mysqli_fetch_array($result2)) {
+											$i++;
+										}
+                            ?>
+					<div class="num" data-start="0" data-end="<? php echo $i; ?>" data-postfix="" data-duration="1500" data-delay="1200">0</div>
 		
 					<h3>Courses</h3>
 					<p>messages per day.</p>
