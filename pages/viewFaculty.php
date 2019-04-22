@@ -118,12 +118,6 @@ else {
                                             <button type="button" onclick="showViewModal('<?php echo $row['facultyId']; ?>');" class="btn btn-white">
                                                 <i class="entypo-eye"></i>
                                             </button>
-                                            <button type="button" onclick="showEditModal('<?php echo $row['facultyId']; ?>');" class="btn btn-info">
-                                                <i class="entypo-pencil"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-danger">
-                                                <i class="entypo-trash"></i>
-                                            </button>
                                         </td>
                                     </tr>
                                     <?php 

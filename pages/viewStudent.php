@@ -94,7 +94,7 @@ else {
                                 <tbody>
                                     <?php
                                     if($admin || $faculty) {
-                                        $query = "Select student.studentId, student.firstName, student.courseTypeId from student";
+                                        $query = "Select student.studentId, student.firstName, course_type.courseType from student Inner Join course_type on student.courseTypeId = course_type.courseTypeId";
                                     } else {
                                         $user = $_SESSION['key'];
                                         $query = "Select course.courseName, course_type.courseType from student_course Inner Join course on student_course.courseId = course.courseId Inner Join course_type on course.courseTypeId = course_type.courseTypeId where student_course.studentId = '$user' ";
@@ -111,18 +111,12 @@ else {
                                             <?php echo $row["firstName"]; ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["courseTypeId"]; ?>
+                                            <?php echo $row["courseType"]; ?>
                                         </td>
                                         <td>
 
                                             <button type="button" onclick="showViewModal('<?php echo $row['studentId']; ?>');" class="btn btn-white">
                                                 <i class="entypo-eye"></i>
-                                            </button>
-                                            <button type="button" onclick="showEditModal('<?php echo $row['studentId']; ?>');" class="btn btn-info">
-                                                <i class="entypo-pencil"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-danger">
-                                                <i class="entypo-trash"></i>
                                             </button>
                                         </td>
                                     </tr>

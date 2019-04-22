@@ -73,16 +73,15 @@
        <br><br>
 	   <?php if ($_SESSION['type'] == 'student') {
                         $userId = $_SESSION['key'];
-                        $query = "select * from student WHERE studentId='$userId'";
+                        $query = "Select student.studentId, student.firstName, student.lastName, course_type.courseType from student Inner Join course_type on student.courseTypeId = course_type.courseTypeId where studentId = '$userId'";
                         $result = mysqli_query($con, $query);
                         if (mysqli_num_rows($result) > 0) {
 							while($row = mysqli_fetch_assoc($result))
 							{ ?>
        <span style="font-size:30px"><b><?php echo $row["firstName"] ?> <?php echo $row["lastName"] ?></b></span><br/><br/>
-       <span style="font-size:25px"><i>has completed the course</i></span> <br/><br/>
-       <span style="font-size:30px"><?php echo $row["courseTypeId"]?></span> <br/><br/>
-       <span style="font-size:20px">with score of <b>$grade.getPoints()%</b></span> <br/><br/><br/><br/>
-       <span style="font-size:25px"><i>dated</i></span><br>
+       <span style="font-size:25px"><i>has completed</i></span> <br/><br/>
+       <span style="font-size:30px"><?php echo $row["courseType"]?></span> <br/><br/>
+       <span style="font-size:25px"><i>Dated : <?php echo date("d-m-Y"); ?></i></span><br>
       <!-- #set ($dt = $DateFormatter.getFormattedDate($grade.getAwardDate(), "MMMM dd, yyyy")) -->
       <span style="font-size:30px"></span>
 	  <?php }
