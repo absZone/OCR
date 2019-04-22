@@ -99,7 +99,7 @@ require('../scripts/db.php');
                                                                                                       echo 'Admin';
                                                                                                     }
 
-                                                                                                    ?>">
+                                                                                                    ?>" readonly="readonly">
             </div>
 
             <button type="submit" class="btn btn-primary" onClick="setTimeout('clearform()', 1500 );">Submit</button>
