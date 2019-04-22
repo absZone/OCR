@@ -205,7 +205,8 @@ else {
                         
                         required: true,
                         minlength: 3,
-                        maxlength: 20
+                        maxlength: 20,
+                       matches: "[a-z]+"
                     },
                     password: {
                         required: true,
@@ -240,6 +241,7 @@ else {
                         maxlength: 40
                     },
                     phoneNo: {
+                        matches:"[0-9]+",
                         required: true,
                         minlength: 10,
                         maxlength: 10,
@@ -253,7 +255,8 @@ else {
                         
                         required: 'Required Field',
                         minlength: 'Required atleast 3 characters',
-                        maxlength: 'Required atmost 20 characters'
+                        maxlength: 'Required atmost 20 characters',
+                        matches: 'Error'
                     },
                     password: {
                         required: 'Enter Password',
