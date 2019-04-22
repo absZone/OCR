@@ -201,7 +201,7 @@ require('../scripts/db.php');
                         book: {
                             //validation property
                             required: true,
-
+                            
                         },
                         courseId: {
                             //validation property
