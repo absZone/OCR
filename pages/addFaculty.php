@@ -94,7 +94,7 @@ else {
                                 <div class="form-group">
                                     <label class="control-label">First Name</label>
 
-                                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name" />
+                                    <input type="text" id="firstName" pattern="[0-9]" name="firstName" class="form-control" placeholder="First Name" />
                                 </div>
 
                                 <div class="form-group">
@@ -186,6 +186,54 @@ else {
         <script src="../assets/js/neon-demo.js"></script>
         <script src="../assets/js/toastr.js"></script>
         <script>
+            jQuery.validator.addMethod("phone",function(value,element,param)
+                {
+                if(this.optional(element))
+                    {//This is not a 'required' element and the input is empty
+                    return true;
+                    }
+                    
+                if(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/.test(value))
+                    {
+                    return true;
+                    }
+                    
+                    return false;
+                    
+                },"Please enter a valid Phone no :");
+
+                jQuery.validator.addMethod("letters",function(value,element,param)
+                {
+                if(this.optional(element))
+                    {//This is not a 'required' element and the input is empty
+                    return true;
+                    }
+                    
+                if(/^[a-zA-Z\s]*$/.test(value))
+                    {
+                    return true;
+                    }
+                    
+                    return false;
+                    
+                },"Only Letters allowed");
+
+                jQuery.validator.addMethod("noNumbers",function(value,element,param)
+                {
+                if(this.optional(element))
+                    {//This is not a 'required' element and the input is empty
+                    return true;
+                    }
+                    
+                if(/[^0-9]/.test(value))
+                    {
+                    return true;
+                    }
+                    
+                    return false;
+                    
+                },"No Numbers allowed");
+
             //form id #form2, call validation of form
             $("#form2").validate({
                 //setup rules for validation
@@ -203,11 +251,13 @@ else {
                         maxlength: 20
                     },
                     firstName: {
+                        letters: true,
                         required: true,
                         minlength: 3,
                         maxlength: 20
                     },
                     lastName: {
+                        letters: true,
                         required: true,
                         minlength: 3,
                         maxlength: 20
@@ -234,6 +284,7 @@ else {
                         maxlength: 40
                     },
                     phoneNo: {
+                        phone: true,
                         required: true,
                         minlength: 10,
                         maxlength: 10,
@@ -255,6 +306,7 @@ else {
                         maxlength: 'Required atmost 20 characters'
                     },
                     firstName: {
+                        pattern : 'Numbers not allowed',
                         required: 'Enter Your First Name',
                         minlength: 'Required atleast 3 characters',
                         maxlength: 'Required atmost 20 characters'

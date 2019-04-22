@@ -115,6 +115,57 @@ require('../scripts/db.php');
                         
                             <div class="panel-body">
 
+                            <table class="table responsive">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Videos</th>
+                                            <th>Course</th>
+                                            <th>download</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <?php
+                                        if ($admin || $faculty) {
+                                            // $query = "Select course.courseId, course.courseName, course_type.courseType from course Left JOIN course_type on course.courseTypeId = course_type.courseTypeId";
+                                            $query = "Select video.videoId,video.videoName, course.courseName from video Left JOIN course on video.courseId = course.courseId";
+                                        } else {
+                                            $user = $_SESSION['key'];
+                                            $query = "Select video.videoId,video.videoName, course.courseName 
+                                            from video 
+                                            Left JOIN course 
+                                            on video.courseId = course.courseId
+                                            LEFT JOIN student_course
+                                            on course.courseId = student_course.courseId
+                                            WHERE student_course.studentId = '$user'";
+                                        }
+
+                                        $result = mysqli_query($con, $query);
+                                        $i = 0;
+                                        while ($row = mysqli_fetch_array($result)) {
+                                            $i++;
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $i ?></td>
+                                                <td>
+                                                    <?php echo $row["videoName"]; ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row["courseName"]; ?>
+                                                </td>
+                                                <td>
+                                                    <a href="../videos/<?php echo $row["videoId"]; ?>.mp4" target="_blank">
+                                                        <button type="button" class="btn btn-white">
+                                                            <i class="entypo-download"></i>
+                                                        </button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                    } ?>
+                                    </tbody>
+                                </table>
 
                             </div>
 

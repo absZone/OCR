@@ -80,7 +80,7 @@ if (isset($_POST["courseId"])) {
 										if (mysqli_num_rows($result) > 0) {
 										
                                     $row = mysqli_fetch_array($result);
-                                    echo $row;
+                                    echo $row["marks"];
                                     }else {
 										echo " no records";
 									}

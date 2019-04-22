@@ -87,17 +87,17 @@ require('../scripts/db.php');
 										// INNER JOIN student_course 
 										// on course.courseId = student_course.courseId
 										// WHERE student_course.studentId = '$userId'";
-										$query = "SELECT course.courseId, course.courseName, result.courseId as id
+										$query = "SELECT course.courseId, course.courseName
 										FROM course
-										LEFT JOIN student_course 
+										INNER JOIN student_course 
 										on course.courseId = student_course.courseId
-										LEFT JOIN result on
+										INNER JOIN result on
 										student_course.courseId = result.courseId
 										WHERE student_course.studentId = '$userId'";
 										$result = mysqli_query($con, $query);
 										while ($row = mysqli_fetch_array($result)) {
 											$disabled = false;
-											if($row['id']==NULL){
+											if($row['courseId']!=NULL){
 												
 											?>
 											<option value="<?php $courseId = $row["courseId"];

@@ -196,6 +196,53 @@ else {
         <script src="../assets/js/neon-demo.js"></script>
         <script src="../assets/js/toastr.js"></script>
         <script>
+            jQuery.validator.addMethod("phone",function(value,element,param)
+                {
+                if(this.optional(element))
+                    {//This is not a 'required' element and the input is empty
+                    return true;
+                    }
+                    
+                if(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[789]\d{9}|(\d[ -]?){10}\d$/.test(value))
+                    {
+                    return true;
+                    }
+                    
+                    return false;
+                    
+                },"Please enter a valid Phone no :");
+
+                jQuery.validator.addMethod("letters",function(value,element,param)
+                {
+                if(this.optional(element))
+                    {//This is not a 'required' element and the input is empty
+                    return true;
+                    }
+                    
+                if(/^[a-zA-Z\s]*$/.test(value))
+                    {
+                    return true;
+                    }
+                    
+                    return false;
+                    
+                },"Only Letters allowed");
+
+                jQuery.validator.addMethod("noNumbers",function(value,element,param)
+                {
+                if(this.optional(element))
+                    {//This is not a 'required' element and the input is empty
+                    return true;
+                    }
+                    
+                if(/[^0-9]/.test(value))
+                    {
+                    return true;
+                    }
+                    
+                    return false;
+                    
+                },"No Numbers allowed");
             //form id #form1, call validation of form
             $("#form3").validate({
                 //setup rules for validation
@@ -206,7 +253,6 @@ else {
                         required: true,
                         minlength: 3,
                         maxlength: 20,
-                       matches: "[a-z]+"
                     },
                     password: {
                         required: true,
@@ -214,11 +260,13 @@ else {
                         maxlength: 20
                     },
                     firstName: {
+                        letters : true,
                         required: true,
                         minlength: 3,
                         maxlength: 20
                     },
                     lastName: {
+                        letters :true,
                         required: true,
                         minlength: 3,
                         maxlength: 20
@@ -241,7 +289,7 @@ else {
                         maxlength: 40
                     },
                     phoneNo: {
-                        matches:"[0-9]+",
+                        phone: true,
                         required: true,
                         minlength: 10,
                         maxlength: 10,

@@ -2,7 +2,8 @@
 require('db.php');
 extract($_POST);
  
-$target_dir = "../videos";
+$target_dir = "../videos/";
+define ("filesplace","../videos");
  
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -23,11 +24,22 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     {
      
     $video_path=$_FILES['fileToUpload']['name'];
+    $result = move_uploaded_file($_FILES['fileToUpload']['tmp_name'], filesplace."/$videoId.mp4");
      
-     
-    if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$target_file))
-     
-    echo "uploaded ";
-     
+    if($result == 1)
+     {
+      $videoName = mysqli_real_escape_string($con, $_POST['name']);
+      $courseId = mysqli_real_escape_string($con, $_POST['courseId']);
+      $sqlInsert = "INSERT INTO video(videoId,courseId,videoName) 
+         VALUES('$videoId','$courseId','$videoName')";
+         if(mysqli_query($con,$sqlInsert))
+         {
+            header("Location:../pages/addvideos.php");
+         }
+         else
+         {
+            header("Location:../pages/addvideos.php");
+         }
     }
-    ?>
+     }
+?>

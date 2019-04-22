@@ -132,7 +132,13 @@ require('../scripts/db.php');
                                             $query = "Select book.bookId,book.bookName, course.courseName from book Left JOIN course on book.courseId = course.courseId";
                                         } else {
                                             $user = $_SESSION['key'];
-                                            $query = "Select book.bookId,book.bookName, course.courseName from book Left JOIN course on book.courseId = course.courseId where student_course.studentId = '$user' ";
+                                            $query = "Select book.bookId,book.bookName, course.courseName 
+                                            from book 
+                                            Left JOIN course 
+                                            on book.courseId = course.courseId
+                                            LEFT JOIN student_course
+                                            on course.courseId = student_course.courseId
+                                            WHERE student_course.studentId = '$user'";
                                         }
 
                                         $result = mysqli_query($con, $query);
