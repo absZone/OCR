@@ -324,7 +324,7 @@ else {
                     age: {
                         required: 'Enter Your Age',
                         number: 'Invalid Entry',
-                        min: 'Age should be more than 25',
+                        min: 'Age should be more than 20',
                         max: 'Age should be less than 60'
                     },
                     courseTypeId: {

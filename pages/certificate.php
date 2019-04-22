@@ -61,6 +61,35 @@
 					
 					<!-- panel body -->
 					<div class="panel-body">
+					
+<div style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
+<div style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878">
+       <span style="font-size:50px; font-weight:bold">Certificate of Completion</span>
+       <br><br>
+	  
+								
+						
+       <span style="font-size:25px"><i>This is to certify that</i></span>
+       <br><br>
+	   <?php if ($_SESSION['type'] == 'student') {
+                        $userId = $_SESSION['key'];
+                        $query = "select * from student WHERE studentId='$userId'";
+                        $result = mysqli_query($con, $query);
+                        if (mysqli_num_rows($result) > 0) {
+							while($row = mysqli_fetch_assoc($result))
+							{ ?>
+       <span style="font-size:30px"><b><?php echo $row["firstName"] ?> <?php echo $row["lastName"] ?></b></span><br/><br/>
+       <span style="font-size:25px"><i>has completed the course</i></span> <br/><br/>
+       <span style="font-size:30px"><?php echo $row["courseTypeId"]?></span> <br/><br/>
+       <span style="font-size:20px">with score of <b>$grade.getPoints()%</b></span> <br/><br/><br/><br/>
+       <span style="font-size:25px"><i>dated</i></span><br>
+      <!-- #set ($dt = $DateFormatter.getFormattedDate($grade.getAwardDate(), "MMMM dd, yyyy")) -->
+      <span style="font-size:30px"></span>
+	  <?php }
+	  }
+	  } ?>
+</div>
+</div>
 						
 						
 					</div>
