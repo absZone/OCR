@@ -226,7 +226,7 @@ else {
                     age: {
                         required: true,
                         number: true,
-                        min: 25,
+                        min: 20,
                         max: 60
                     },
                     courseTypeId: {

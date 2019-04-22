@@ -90,7 +90,7 @@ if(isset($_POST) & !empty($_POST)){
 	$email = mysqli_real_escape_string($con, $_POST['email']);
 	$subject = mysqli_real_escape_string($con, $_POST['subject']);
 
-	$isql = "INSERT INTO comments (name, email, subject, status) VALUES ('$name', '$email', '$subject', 'draft')";
+	$isql = "INSERT INTO comments (id,name, email, subject) VALUES (UUID(),'$name', '$email', '$subject')";
 	$ires = mysqli_query($con, $isql) or die(mysqli_error($con));
 	if($ires){
     $smsg = "Your Comment Submitted Successfully";
